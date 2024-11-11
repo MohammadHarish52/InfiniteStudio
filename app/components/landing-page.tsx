@@ -30,18 +30,7 @@ export default function Component() {
           <Link href="#" className="text-sm font-medium hover:text-gray-300">
             Services
           </Link>
-          <Link href="#" className="text-sm font-medium hover:text-gray-300">
-            Portfolio
-          </Link>
-          <Link href="#" className="text-sm font-medium hover:text-gray-300">
-            Process
-          </Link>
-          <Link href="#" className="text-sm font-medium hover:text-gray-300">
-            Team
-          </Link>
-          <Link href="#" className="text-sm font-medium hover:text-gray-300">
-            Blog
-          </Link>
+
           <Link href="#" className="text-sm font-medium hover:text-gray-300">
             Contact
           </Link>
@@ -74,7 +63,7 @@ export default function Component() {
 
       {/* Flowing Gradient Wave */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-[40vh]"
+        className="absolute bottom-0 left-0 right-0 h-[40vh] after:absolute after:inset-0 after:bg-black after:blur-3xl after:-bottom-1/2"
         style={{
           borderTopLeftRadius: "50% 100%",
           borderTopRightRadius: "50% 100%",
