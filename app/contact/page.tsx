@@ -1,15 +1,10 @@
 "use client";
 
 import { useState } from "react";
-
 import { zodResolver } from "@hookform/resolvers/zod";
-
 import { useForm } from "react-hook-form";
-
 import * as z from "zod";
-
 import { Checkbox } from "../components/ui/checkbox";
-
 import {
   Select,
   SelectContent,
@@ -17,31 +12,23 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../components/ui/select";
-
 import { Button } from "../components/ui/button";
-
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "../components/ui/form";
-
 import { Input } from "../components/ui/input";
-
-
 import { Textarea } from "../components/ui/textarea";
 
-
 const FormSchema = z.object({
-  first_name: z.string(),
-  last_name: z.string(),
-  email: z.string().email(),
-  job_title: z.string(),
-  company_name: z.string(),
+  first_name: z.string().min(1, "First name is required"),
+  last_name: z.string().min(1, "Last name is required"),
+  email: z.string().email("Invalid email address"),
+  job_title: z.string().optional(),
+  company_name: z.string().optional(),
   help: z.enum([
     "Evaluate Bird for my company",
     "Learn More",
@@ -49,36 +36,24 @@ const FormSchema = z.object({
     "Other",
   ]),
   services: z.enum([
-    "Mobile App Develoment",
+    "Mobile App Development",
     "Social Media Marketing",
     "UI/UX Design",
     "Branding",
     "Website Development",
   ]),
-  info: z.string(),
+  info: z.string().optional(),
+  terms: z
+    .boolean()
+    .refine((val) => val === true, "You must agree to the terms"),
 });
 
-type FormValues = {
-  first_name: string;
-  last_name: string;
-  email: string;
-  job_title: string;
-  company_name: string;
-  help: "Evaluate Bird for my company" | "Learn More" | "Get a Quote" | "Other";
-  services:
-    | "Mobile App Develoment"
-    | "Social Media Marketing"
-    | "UI/UX Design"
-    | "Branding"
-    | "Website Development";
-  info: string;
-  terms: boolean;
-};
+type FormValues = z.infer<typeof FormSchema>;
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(null);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
@@ -89,15 +64,16 @@ export default function ContactForm() {
       job_title: "",
       company_name: "",
       help: "Learn More",
-      services: "Mobile App Develoment",
+      services: "Mobile App Development",
       info: "",
+      terms: false,
     },
   });
 
-  async function onSubmit(data: z.infer<typeof FormSchema>) {
+  async function onSubmit(data: FormValues) {
     try {
       setLoading(true);
-      setError(null)
+      setError(null);
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -110,273 +86,252 @@ export default function ContactForm() {
 
       setSubmitted(true);
     } catch (error) {
-      setError("Something went wrong. Please try again later.")
+      setError("Something went wrong. Please try again later.");
     } finally {
       setLoading(false);
     }
   }
 
   return (
-    <div className=" w-full   md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden "> 
-      <div className="md:flex items-start justify-center md:py-20 px-6">
-        <div className="">
-          <div className="text-5xl font-medium  w-full md:w-2/3  pb-5 md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-            Contact our sales team
+    <div className="w-full bg-black text-white relative overflow-hidden">
+      <div className="container mx-auto px-4 py-16 md:py-24">
+        <div className="md:flex md:space-x-12">
+          <div className="md:w-1/2 mb-12 md:mb-0">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
+              Contact our sales team
+            </h1>
+            <p className="text-xl text-gray-400 mb-8">
+              Let's talk about how WebCraft can help your team work better.
+            </p>
+            <div className="bg-gray-800 rounded-xl p-6 space-y-6 hidden md:block">
+              <div className="pb-6 border-b border-gray-700">
+                <p className="text-gray-300">
+                  One flexible agency for your entire company to share
+                  knowledge, ship projects, and collaborate.
+                </p>
+              </div>
+              <div className="pb-6 border-b border-gray-700">
+                <p className="text-gray-300">
+                  Enterprise features to securely manage user access and
+                  security.
+                </p>
+              </div>
+              <div>
+                <p className="text-gray-300">
+                  Dedicated support to work with you on your setup and help you
+                  build the best plan for your company.
+                </p>
+              </div>
+            </div>
           </div>
-          <div
-            className="
-              
-              py-4
-              text-gray-300
-                    "
-          >
-            Let&apos;s talk about how Webcraft can help your team work better.
-          </div>
-
-          <div className="bg-[#f6f5f4] md:w-4/5 space-y-6 p-4 rounded-2xl my-4 hidden md:flex md:flex-col">
-            <div className="flex gap-4 border-b ">
-              <div className=" font-normal pb-4 ">
-                One flexible agency for your entire company to share knowledge,
-                ship projects, and collaborate.
-              </div>
-            </div>
-
-            <div className="flex gap-4 border-b ">
-              <div className=" font-normal pb-4 ">
-                Enterprise features to securely manage user access and security.
-              </div>
-            </div>
-
-            <div className="flex gap-4  ">
-              <div className=" font-normal pb-4 ">
-                Dedicated support to work with you on your setup and help you
-                build the best plan for your company.
-              </div>
-            </div>
+          <div className="md:w-1/2">
+            <Form {...form}>
+              {!submitted ? (
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-6 bg-gray-900 rounded-2xl p-8"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <FormField
+                      control={form.control}
+                      name="first_name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-gray-300">
+                            First name *
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              className="bg-gray-800 border-gray-700 text-white"
+                            />
+                          </FormControl>
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="last_name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-gray-300">
+                            Last name *
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              className="bg-gray-800 border-gray-700 text-white"
+                            />
+                          </FormControl>
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-gray-300">Email *</FormLabel>
+                        <FormControl>
+                          <Input
+                            {...field}
+                            type="email"
+                            className="bg-gray-800 border-gray-700 text-white"
+                          />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="company_name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-gray-300">
+                          Company name
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            {...field}
+                            className="bg-gray-800 border-gray-700 text-white"
+                          />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="services"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-gray-300">
+                          Services you are interested in
+                        </FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
+                          <FormControl>
+                            <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
+                              <SelectValue />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent className="bg-gray-800 border-gray-700 text-white">
+                            <SelectItem value="Mobile App Development">
+                              Mobile App Development
+                            </SelectItem>
+                            <SelectItem value="Social Media Marketing">
+                              Social Media Marketing
+                            </SelectItem>
+                            <SelectItem value="UI/UX Design">
+                              UI/UX Design
+                            </SelectItem>
+                            <SelectItem value="Branding">Branding</SelectItem>
+                            <SelectItem value="Website Development">
+                              Website Development
+                            </SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="help"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-gray-300">
+                          How can we help?
+                        </FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
+                          <FormControl>
+                            <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
+                              <SelectValue />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent className="bg-gray-800 border-gray-700 text-white">
+                            <SelectItem value="Evaluate Bird for my company">
+                              Evaluate for my company
+                            </SelectItem>
+                            <SelectItem value="Learn More">
+                              Learn More
+                            </SelectItem>
+                            <SelectItem value="Get a Quote">
+                              Get a Quote
+                            </SelectItem>
+                            <SelectItem value="Other">Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="info"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-gray-300">
+                          Anything else?
+                        </FormLabel>
+                        <FormControl>
+                          <Textarea
+                            {...field}
+                            className="bg-gray-800 border-gray-700 text-white h-24"
+                          />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="terms"
+                    render={({ field }) => (
+                      <FormItem className="flex items-start space-x-3 space-y-0">
+                        <FormControl>
+                          <Checkbox
+                            checked={field.value}
+                            onCheckedChange={field.onChange}
+                            className="bg-gray-800 border-gray-700 text-blue-500"
+                          />
+                        </FormControl>
+                        <div className="space-y-1 leading-none">
+                          <FormLabel className="text-sm text-gray-300">
+                            I agree to marketing communications related to
+                            upcoming services.
+                          </FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
+                  <Button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-blue-500 to-emerald-500 text-white font-medium py-2 px-4 rounded-md hover:from-blue-600 hover:to-emerald-600 transition-all duration-200"
+                    disabled={loading}
+                  >
+                    {loading ? "Submitting..." : "Submit"}
+                  </Button>
+                  {error && (
+                    <p className="text-red-500 text-sm mt-2">{error}</p>
+                  )}
+                </form>
+              ) : (
+                <div className="bg-gray-900 rounded-2xl p-8 text-center">
+                  <h2 className="text-2xl font-bold mb-4 text-white">
+                    Thank you for your inquiry!
+                  </h2>
+                  <p className="text-gray-300">
+                    We've received your message and will be contacting you via
+                    email shortly.
+                  </p>
+                </div>
+              )}
+            </Form>
           </div>
         </div>
-
-        <Form {...form}>
-          {!submitted ? (
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="
-            space-y-4
-            h-full
-            border rounded-3xl p-10
-            md:w-1/3
-            
-            
-                     
-                        "
-            >
-              <div className="md:flex items-center gap-6 ">
-                <FormField
-                  control={form.control}
-                  name="first_name"
-                  render={({ field }) => (
-                    <FormItem className="items-center justify-center  w-full">
-                      <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                        First name *
-                      </FormLabel>
-                      <FormControl>
-                        <Input {...field} />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="last_name"
-                  render={({ field }) => (
-                    <FormItem className="items-center justify-center  w-full">
-                      <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                        Last name *
-                      </FormLabel>
-                      <FormControl>
-                        <Input {...field} />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center  w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      Email *
-                    </FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="company_name"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center  w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      Company name?
-                    </FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="services"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                    Services you are interested in
-                    </FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select an option" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <div className="flex gap-4">
-                          <SelectItem value="Mobile App Develoment">
-                          Mobile App Develoment
-                          </SelectItem>
-                        </div>
-                        <SelectItem value="Social Media Marketing">Social Media Marketing</SelectItem>
-                        <SelectItem value="51-200">51-200</SelectItem>
-                        <SelectItem value="501-1000">501-1000</SelectItem>
-                        <SelectItem value="1000+">1000+</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="help"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center  w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      How can we help ?
-                    </FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger
-                        
-                        
-                        >
-                          <SelectValue placeholder="Select an option" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <div className="flex gap-4">
-                          <SelectItem value="Evaluate Bird for my company">
-                            Evaluate for my company
-                          </SelectItem>
-                        </div>
-                        <SelectItem value="Learn More">Learn More</SelectItem>
-                        <SelectItem value="Get a Quote">Get a Quote</SelectItem>
-
-                        <SelectItem value="Other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="info"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      Anything else ?
-                    </FormLabel>
-                    <FormControl>
-                      <Textarea style={{ height: "100px" }} {...field} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <div className="flex gap-4 items-center">
-                <div>
-                  <Checkbox
-                    className="
-                outline
-                border-2
-                text-sm
-                font-light
-                bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400
-                "
-                  />
-                </div>
-                <div className="text-xs font-light  md:w-3/4 mb-1 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
-                  I agree to marketing communications related
-                  to upcoming services.
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <Button
-                  type="submit"
-                  className="
-                            text-sm
-                            font-light
-                        
-                            "
-                  disabled={loading}
-                  onClick={() => form.handleSubmit(onSubmit)}
-                >
-                  Submit
-                </Button>
-              </div>
-            </form>
-          ) : (
-            <>
-              <div
-                className="
-        text-xl 
-        
-        md:text-2xl 
-        flex 
-        items-center
-        justify-center
-        flex-col
-        
-
- 
-        px-8
-
-        "
-              >
-                <div className="w-80 py-20">
-                  <div className="text-gray-500 font-light  text-center justify-center mx-auto py-10">
-                    We&apos;ve received your inquiry and will be contacting you
-                    via email shortly.
-                  </div>
-                </div>
-              </div>
-            </>
-          )}
-        </Form>
       </div>
     </div>
   );
