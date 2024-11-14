@@ -29,13 +29,8 @@ export default function Component() {
           <Link href="#" className="text-sm font-medium hover:text-gray-300">
             Services
           </Link>
-          <Link href="#" className="text-sm font-medium hover:text-gray-300">
-            Portfolio
-          </Link>
-          <Link href="#" className="text-sm font-medium hover:text-gray-300">
-            Projects
-          </Link>
-          <Link href="#" className="text-sm font-medium hover:text-gray-300">
+
+          <Link href="/contact" className="text-sm font-medium hover:text-gray-300">
             Contact
           </Link>
         </div>
