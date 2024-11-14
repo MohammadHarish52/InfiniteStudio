@@ -31,7 +31,7 @@ export default function Component() {
             Services
           </Link>
 
-          <Link href="#" className="text-sm font-medium hover:text-gray-300">
+          <Link href="/contact" className="text-sm font-medium hover:text-gray-300">
             Contact
           </Link>
         </div>
