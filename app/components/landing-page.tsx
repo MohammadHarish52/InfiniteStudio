@@ -1,9 +1,8 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Code, Sparkles, Star } from "lucide-react";
-
+import { RainbowButton } from "@/components/ui/rainbow-button";
 export default function Component() {
   const [gradientPosition, setGradientPosition] = useState(0);
 
@@ -30,31 +29,35 @@ export default function Component() {
           <Link href="#" className="text-sm font-medium hover:text-gray-300">
             Services
           </Link>
-
+          <Link href="#" className="text-sm font-medium hover:text-gray-300">
+            Portfolio
+          </Link>
+          <Link href="#" className="text-sm font-medium hover:text-gray-300">
+            Projects
+          </Link>
           <Link href="#" className="text-sm font-medium hover:text-gray-300">
             Contact
           </Link>
         </div>
 
         <div className="flex items-center gap-4">
-          <button className="px-4 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition-colors">
-            Get a quote <span className="ml-2">→</span>
-          </button>
+          <RainbowButton>Get a quote</RainbowButton>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <main className="container mx-auto px-4 pt-20 pb-32 text-center relative z-10">
+      <main className="container flex flex-col items-center justify-center px-4 pt-20 pb-32 text-center relative z-10">
         <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight max-w-4xl mx-auto">
           Crafting digital experiences that inspire and innovate
         </h1>
         <p className="mt-6 text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto">
-          We're a passionate team of developers, designers, and strategists
+          We're a college peers of passionate about developing , designing and
           building cutting-edge web solutions for forward-thinking businesses.
         </p>
-        <button className="mt-10 px-8 py-6 bg-white text-black rounded-md hover:bg-gray-200 transition-colors text-lg">
-          View our work <span className="ml-2">→</span>
-        </button>
+
+        <RainbowButton className="mt-10 px-8 py-4 bg-white text-black">
+          View our work
+        </RainbowButton>
       </main>
 
       {/* Decorative Elements */}
