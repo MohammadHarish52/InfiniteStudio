@@ -4,12 +4,14 @@ import Link from "next/link";
 
 export function Navbar() {
   return (
-    <nav className="container mx-auto px-4 py-4 flex items-center justify-between relative z-10">
+    <nav className="container mx-auto px-4 py-4 flex items-center justify-between relative z-10 bg-black text-white w-full">
       <div className="flex items-center gap-2">
         <div className="w-8 h-8">
           <Code className="w-full h-full" />
         </div>
-        <span className="text-xl font-bold">WebCraft</span>
+        <Link href="/" className="text-xl font-bold">
+          WebCraft
+        </Link>
       </div>
 
       <div className="hidden md:flex items-center gap-8">
