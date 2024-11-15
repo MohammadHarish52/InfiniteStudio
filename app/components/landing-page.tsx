@@ -1,8 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import Link from "next/link";
+
 import { Code, Sparkles, Star } from "lucide-react";
 import { RainbowButton } from "@/components/ui/rainbow-button";
+import { Navbar } from "./Navbar";
 export default function Component() {
   const [gradientPosition, setGradientPosition] = useState(0);
 
@@ -16,30 +17,6 @@ export default function Component() {
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Navigation */}
-      <nav className="container mx-auto px-4 py-4 flex items-center justify-between relative z-10">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8">
-            <Code className="w-full h-full" />
-          </div>
-          <span className="text-xl font-bold">WebCraft</span>
-        </div>
-
-        <div className="hidden md:flex items-center gap-8">
-          <Link href="#" className="text-sm font-medium hover:text-gray-300">
-            Services
-          </Link>
-
-          <Link href="/contact" className="text-sm font-medium hover:text-gray-300">
-            Contact
-          </Link>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <RainbowButton>Get a quote</RainbowButton>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <main className="container flex flex-col items-center justify-center px-4 pt-20 pb-32 text-center relative z-10">
         <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight max-w-4xl mx-auto">
