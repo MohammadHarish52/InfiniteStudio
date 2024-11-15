@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Code, Sparkles, Star } from "lucide-react";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { Navbar } from "./Navbar";
+import Particles from "@/components/ui/particles";
 export default function Component() {
   const [gradientPosition, setGradientPosition] = useState(0);
 
@@ -69,6 +70,13 @@ export default function Component() {
           }
         }
       `}</style>
+      <Particles
+        className="absolute inset-0"
+        quantity={200}
+        ease={80}
+        color={"#fff"}
+        refresh
+      />
     </div>
   );
 }
