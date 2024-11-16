@@ -28,7 +28,7 @@ export default function Component() {
           building cutting-edge web solutions for forward-thinking businesses.
         </p>
 
-        <RainbowButton className="mt-10 px-8 py-4 bg-white text-black">
+        <RainbowButton className="mt-10 px-8 py-4  ">
           View our work
         </RainbowButton>
       </main>
