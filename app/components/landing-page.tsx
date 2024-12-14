@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-
-import { Code, Sparkles, Star } from "lucide-react";
+import Link from "next/link";
+import { Sparkles, Star } from "lucide-react";
 import { RainbowButton } from "@/components/ui/rainbow-button";
-import { Navbar } from "./Navbar";
 import Particles from "@/components/ui/particles";
+import WordPullUp from "@/components/ui/word-pull-up";
 export default function Component() {
   const [gradientPosition, setGradientPosition] = useState(0);
 
@@ -17,20 +17,29 @@ export default function Component() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-black text-white relative overflow-hidden">
       {/* Hero Section */}
       <main className="container flex flex-col items-center justify-center px-4 pt-20 pb-32 text-center relative z-10">
-        <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight max-w-4xl mx-auto">
-          Crafting digital experiences that inspire and innovate
-        </h1>
-        <p className="mt-6 text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto">
+        <WordPullUp
+          className="text-4xl md:text-7xl font-bold tracking-[-0.02em]  bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 text-transparent bg-clip-text md:leading-[5rem]"
+          words="Crafting digital experiences "
+        />
+        <WordPullUp
+          className="text-4xl md:text-7xl font-bold tracking-[-0.02em] bg-gradient-to-r from-cyan-400 via-pink-400 to-emerald-400 text-transparent bg-clip-text  md:leading-[5rem]"
+          words=" that inspire and innovate"
+        />
+
+        <p className="mt-6 text-xl text-gray-400 max-w-2xl mx-auto">
           We're a college peers of passionate about developing , designing and
           building cutting-edge web solutions for forward-thinking businesses.
         </p>
 
-        <RainbowButton className="mt-10 px-8 py-4  ">
+        <Link
+          href="/"
+          className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all border border-white/20 hover:border-white/40 mt-10"
+        >
           View our work
-        </RainbowButton>
+        </Link>
       </main>
 
       {/* Decorative Elements */}

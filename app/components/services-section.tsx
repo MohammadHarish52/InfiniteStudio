@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import Particles from "@/components/ui/particles";
 
 export default function Component() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -44,7 +45,6 @@ export default function Component() {
             Elevate your digital presence with our comprehensive web services
           </p>
         </div>
-
         <div className="grid md:grid-cols-2 gap-8 md:px-40">
           {services.map((service, index) => (
             <div
@@ -86,7 +86,14 @@ export default function Component() {
               </div>
             </div>
           ))}
-        </div>
+        </div>{" "}
+        <Particles
+          className="absolute inset-0"
+          quantity={200}
+          ease={80}
+          color={"#fff"}
+          refresh
+        />
       </div>
 
       <style jsx>{`
