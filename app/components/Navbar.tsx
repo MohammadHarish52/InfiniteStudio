@@ -29,7 +29,7 @@ export function Navbar() {
 
             {/* Message Button */}
             <Link
-              href="/contact"
+              href="/book-meeting"
               className="px-4 py-2 rounded-lg bg-[#0A0A0A] hover:bg-zinc-900 text-white transition-all border border-zinc-800 hover:border-zinc-700"
             >
               Message Us
