@@ -8,7 +8,6 @@ export default function Home() {
       <LandingPage />
       <ServicesSection />
       <ProjectSection />
-      <Footer />
     </>
   );
 }
