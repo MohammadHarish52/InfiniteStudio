@@ -8,20 +8,32 @@ export default function Component() {
     <div className="min-h-screen flex flex-col justify-center items-center bg-black text-white relative overflow-hidden">
       {/* Hero Section */}
       <main className="container flex flex-col items-center justify-center px-4 text-center relative z-10">
+        {/* Label */}
+        <div className="mb-4">
+          <span className="text-[#D4A853] text-sm md:text-base">
+            Welcome to WebCraft
+          </span>
+        </div>
+
+        {/* Heading */}
         <h1 className="text-4xl md:text-7xl sm:text-6xl font-medium tracking-tight mb-6">
-          WebCraft Development
+          Building digital products
           <br />
-          products people love!
+          that make an impact
         </h1>
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8">
-          MagicApps is the fastest growing product studio, focused on building
-          consumer facing apps and websites
+
+        {/* Description */}
+        <p className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto mb-8">
+          We're a team of passionate developers and designers, crafting
+          exceptional digital experiences for forward-thinking businesses.
         </p>
+
+        {/* CTA Button */}
         <Link
-          href="/contact"
+          href="/book-meeting"
           className="px-4 py-2 rounded-lg bg-[#0A0A0A] hover:bg-zinc-900 text-white transition-all border border-zinc-800 hover:border-zinc-700"
         >
-          Contact Us
+          Book a Meeting
         </Link>
       </main>
 
