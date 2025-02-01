@@ -8,7 +8,7 @@ export default function Component() {
     <div className="min-h-screen flex flex-col justify-center items-center bg-black text-white relative overflow-hidden">
       {/* Hero Section */}
       <main className="container flex flex-col items-center justify-center px-4 text-center relative z-10">
-        <h1 className="text-[85px] md:text-7xl font-medium tracking-tight mb-6">
+        <h1 className="text-4xl md:text-7xl sm:text-6xl font-medium tracking-tight mb-6">
           WebCraft Development
           <br />
           products people love!
@@ -19,12 +19,13 @@ export default function Component() {
         </p>
         <Link
           href="/contact"
-          className="group flex items-center gap-2 px-6 py-3 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white transition-all"
+          className="px-4 py-2 rounded-lg bg-[#0A0A0A] hover:bg-zinc-900 text-white transition-all border border-zinc-800 hover:border-zinc-700"
         >
           Contact Us
-          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
         </Link>
       </main>
+
+      {/* About Section */}
 
       {/* Flowing Gradient Wave */}
       <div
