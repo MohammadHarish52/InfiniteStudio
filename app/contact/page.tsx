@@ -94,7 +94,7 @@ export default function ContactForm() {
       <div className="container mx-auto px-4 md:px-40 py-32">
         <div className="max-w-6xl mx-auto">
           <div className="mb-4">
-            <span className="text-[#D4A853] text-sm md:text-base">Contact</span>
+            <span className="text-[#5bc0be] text-sm md:text-base">Contact</span>
           </div>
           <div className="mb-16">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-white mb-6">
@@ -148,7 +148,7 @@ export default function ContactForm() {
                           <FormControl>
                             <Input
                               {...field}
-                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#D4A853] focus:border-[#D4A853]"
+                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#5bc0be] focus:border-[#5bc0be]"
                             />
                           </FormControl>
                         </FormItem>
@@ -165,7 +165,7 @@ export default function ContactForm() {
                           <FormControl>
                             <Input
                               {...field}
-                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#D4A853] focus:border-[#D4A853]"
+                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#5bc0be] focus:border-[#5bc0be]"
                             />
                           </FormControl>
                         </FormItem>
@@ -186,7 +186,7 @@ export default function ContactForm() {
                             <Input
                               {...field}
                               type="email"
-                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#D4A853] focus:border-[#D4A853]"
+                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#5bc0be] focus:border-[#5bc0be]"
                             />
                           </FormControl>
                         </FormItem>
@@ -204,7 +204,7 @@ export default function ContactForm() {
                           <FormControl>
                             <Input
                               {...field}
-                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#D4A853] focus:border-[#D4A853]"
+                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#5bc0be] focus:border-[#5bc0be]"
                             />
                           </FormControl>
                         </FormItem>
@@ -293,7 +293,7 @@ export default function ContactForm() {
                           <FormControl>
                             <Textarea
                               {...field}
-                              className="bg-[#0A0A0A] border-zinc-800 text-white min-h-[120px] focus:ring-1 focus:ring-[#D4A853] focus:border-[#D4A853]"
+                              className="bg-[#0A0A0A] border-zinc-800 text-white min-h-[120px] focus:ring-1 focus:ring-[#5bc0be] focus:border-[#5bc0be]"
                             />
                           </FormControl>
                         </FormItem>
@@ -309,7 +309,7 @@ export default function ContactForm() {
                             <Checkbox
                               checked={field.value}
                               onCheckedChange={field.onChange}
-                              className="bg-[#0A0A0A] border-zinc-800 data-[state=checked]:bg-[#D4A853]"
+                              className="bg-[#0A0A0A] border-zinc-800 data-[state=checked]:bg-[#5bc0be]"
                             />
                           </FormControl>
                           <div className="space-y-1 leading-none">

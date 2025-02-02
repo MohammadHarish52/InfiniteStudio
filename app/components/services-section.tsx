@@ -38,7 +38,7 @@ export default function ServicesSection() {
       <div className="container mx-auto px-4 md:px-40">
         {/* Section Header */}
         <div className="mb-4">
-          <span className="text-[#D4A853] text-sm">Services</span>
+          <span className="text-[#5bc0be] text-sm md:text-base">Services</span>
         </div>
         <h2 className="text-6xl md:text-7xl font-medium text-white mb-16">
           All-in-one solution
@@ -58,7 +58,7 @@ export default function ServicesSection() {
                   {/* Icon */}
                   <div className="mb-6">
                     <div className="w-12 h-12 rounded-full bg-zinc-900 flex items-center justify-center">
-                      <service.icon className="w-6 h-6 text-[#D4A853]" />
+                      <service.icon className="w-6 h-6 text-[#5bc0be]" />
                     </div>
                   </div>
 

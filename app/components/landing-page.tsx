@@ -7,31 +7,26 @@ export default function Component() {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-black text-white relative overflow-hidden">
       {/* Hero Section */}
-      <main className="container flex flex-col items-center justify-center px-4 text-center relative z-10">
+      <main className="container flex flex-col items-start md:items-center justify-center px-4 text-left md:text-center relative z-10">
         {/* Label */}
-        <div className="mb-4">
-          <span className="text-[#D4A853] text-sm md:text-base">
-            Welcome to WebCraft
-          </span>
-        </div>
 
         {/* Heading */}
         <h1 className="text-4xl md:text-7xl sm:text-6xl font-medium tracking-tight mb-6">
-          Building digital products
+          InfiniteStudio builds digital
           <br />
-          that make an impact
+          products that make an impact
         </h1>
 
         {/* Description */}
-        <p className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto mb-8">
+        <p className="text-base md:text-lg text-zinc-400 max-w-2xl mb-8">
           We're a team of passionate developers and designers, crafting
           exceptional digital experiences for forward-thinking businesses.
         </p>
 
-        {/* CTA Button */}
+        {/* CTA Button - Hidden on mobile as it's in navbar */}
         <Link
           href="/book-meeting"
-          className="px-4 py-2 rounded-lg bg-[#0A0A0A] hover:bg-zinc-900 text-white transition-all border border-zinc-800 hover:border-zinc-700"
+          className="hidden md:block px-4 py-2 rounded-lg bg-[#0A0A0A] hover:bg-zinc-900 text-white transition-all border border-zinc-800 hover:border-zinc-700"
         >
           Book a Meeting
         </Link>
@@ -43,8 +38,10 @@ export default function Component() {
       <div
         className="absolute bottom-0 left-0 right-0 h-[40vh] after:absolute after:inset-0 after:bg-black after:blur-3xl after:-bottom-1/2"
         style={{
-          borderTopLeftRadius: "50% 100%",
-          borderTopRightRadius: "50% 100%",
+          borderTopLeftRadius:
+            window.innerWidth < 768 ? "15% 100%" : "50% 100%",
+          borderTopRightRadius:
+            window.innerWidth < 768 ? "15% 100%" : "50% 100%",
           transform: "scale(1.5)",
           background: `
             linear-gradient(

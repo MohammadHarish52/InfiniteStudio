@@ -40,7 +40,9 @@ export default function ProjectsSection() {
   return (
     <section className="w-full bg-black py-32 relative">
       <div className="container mx-auto px-4 md:px-40">
-        <h2 className="text-4xl font-medium mb-16 text-white">Projects</h2>
+        <h2 className="text-4xl font-medium mb-16 text-white">
+          <span className="text-[#5bc0be] text-sm md:text-base">Projects</span>
+        </h2>
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (

@@ -11,7 +11,7 @@ const Book = () => {
       <div className="container mx-auto px-4 md:px-40 py-32">
         {/* Header */}
         <div className="mb-4">
-          <span className="text-[#D4A853] text-sm md:text-base">Schedule</span>
+          <span className="text-[#5bc0be] text-sm md:text-base">Schedule</span>
         </div>
         <div className="mb-16">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-white mb-6">
