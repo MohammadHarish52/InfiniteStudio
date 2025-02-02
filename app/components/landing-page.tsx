@@ -1,9 +1,26 @@
 "use client";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import Particles from "@/components/ui/particles";
+import { useState, useEffect } from "react";
 
 export default function Component() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-black text-white relative overflow-hidden">
       {/* Hero Section */}
@@ -38,10 +55,8 @@ export default function Component() {
       <div
         className="absolute bottom-0 left-0 right-0 h-[40vh] after:absolute after:inset-0 after:bg-black after:blur-3xl after:-bottom-1/2"
         style={{
-          borderTopLeftRadius:
-            window.innerWidth < 768 ? "15% 100%" : "50% 100%",
-          borderTopRightRadius:
-            window.innerWidth < 768 ? "15% 100%" : "50% 100%",
+          borderTopLeftRadius: isMobile ? "15% 100%" : "50% 100%",
+          borderTopRightRadius: isMobile ? "15% 100%" : "50% 100%",
           transform: "scale(1.5)",
           background: `
             linear-gradient(
