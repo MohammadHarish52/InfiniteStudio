@@ -12,18 +12,18 @@ export function Navbar() {
           </Link>
 
           {/* Navigation Links */}
-          <div className="flex items-center space-x-8">
+          <div className=" md:flex items-center space-x-8">
             <Link
               href="/contact"
-              className="hidden md:block text-gray-300 hover:text-white transition-colors"
+              className="text-gray-300 hidden md:block hover:text-white transition-colors"
             >
               Contact
             </Link>
 
-            {/* Message Button visible on smaller screens */}
+            {/* Message Button */}
             <Link
               href="/book-meeting"
-              className="md:hidden px-4 py-2 rounded-lg bg-[#0A0A0A] hover:bg-zinc-900 text-white transition-all border border-zinc-800 hover:border-zinc-700"
+              className="px-4 py-2 rounded-lg bg-[#0A0A0A] hover:bg-zinc-900 text-white transition-all border border-zinc-800 hover:border-zinc-700"
             >
               Message Us
             </Link>

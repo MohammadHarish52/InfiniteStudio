@@ -1,32 +1,13 @@
 "use client";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import Particles from "@/components/ui/particles";
-import { useState, useEffect } from "react";
 
 export default function Component() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    // Set initial value
-    handleResize();
-
-    // Add event listener
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-black text-white relative overflow-hidden">
       {/* Hero Section */}
-      <main className="container flex flex-col items-start md:items-center justify-center px-4 text-left md:text-center relative z-10">
-        {/* Label */}
-
+      <main className="container flex flex-col items-center justify-center px-4 text-left md:text-center relative z-10">
         {/* Heading */}
         <h1 className="text-4xl md:text-7xl sm:text-6xl font-medium tracking-tight mb-6">
           InfiniteStudio builds digital
@@ -35,15 +16,15 @@ export default function Component() {
         </h1>
 
         {/* Description */}
-        <p className="text-base md:text-lg text-zinc-400 max-w-2xl mb-8">
+        <p className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto mb-8">
           We're a team of passionate developers and designers, crafting
           exceptional digital experiences for forward-thinking businesses.
         </p>
 
-        {/* CTA Button - Hidden on mobile as it's in navbar */}
+        {/* CTA Button */}
         <Link
           href="/book-meeting"
-          className="hidden md:block px-4 py-2 rounded-lg bg-[#0A0A0A] hover:bg-zinc-900 text-white transition-all border border-zinc-800 hover:border-zinc-700"
+          className="px-4 py-2 rounded-lg bg-[#0A0A0A] hover:bg-zinc-900 text-white transition-all border border-zinc-800 hover:border-zinc-700"
         >
           Book a Meeting
         </Link>
@@ -55,8 +36,8 @@ export default function Component() {
       <div
         className="absolute bottom-0 left-0 right-0 h-[40vh] after:absolute after:inset-0 after:bg-black after:blur-3xl after:-bottom-1/2"
         style={{
-          borderTopLeftRadius: isMobile ? "15% 100%" : "50% 100%",
-          borderTopRightRadius: isMobile ? "15% 100%" : "50% 100%",
+          borderTopLeftRadius: "50% 100%",
+          borderTopRightRadius: "50% 100%",
           transform: "scale(1.5)",
           background: `
             linear-gradient(
@@ -95,6 +76,10 @@ export default function Component() {
         ease={80}
         color={"#fff"}
         refresh
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-50 pointer-events-none"
+        aria-hidden="true"
       />
     </div>
   );
