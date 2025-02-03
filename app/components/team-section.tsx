@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export default function TeamSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -8,21 +9,25 @@ export default function TeamSection() {
   const team = [
     {
       name: "Mohammad Harish",
-      role: "Foundeer WebCraft ex crackeddevs",
-      achievements: ["Building WebCraft", "Based in Kanpur, India"],
-      image: "/harish.jpg",
+      role: "Foundeer InfiniteStudios ex crackeddevs",
+      achievements: ["Building InfiniteStudios", "Based in Kanpur, India"],
+      image: "/harish.png",
+      connect: "https://x.com/Mohamma59305726",
     },
+
     {
       name: "Rohan Sharma",
       role: "Serial Entrepreneur",
       achievements: ["Won 20+ Hackathons", "Based in London, UK"],
-      image: "/rohan.jpg",
+      image: "/rohan.png",
+      connect: "https://x.com/rohhaan12",
     },
     {
       name: "Manan Arora",
       role: "Serial Entrepreneur",
       achievements: ["Won 20+ Hackathons", "Based in London, UK"],
       image: "/manan.jpg",
+      connect: "https://x.com/Manancode",
     },
   ];
 
@@ -83,7 +88,9 @@ export default function TeamSection() {
                 {/* Connect Button - Only for members with images */}
                 {member.image && (
                   <button className="px-4 py-2 w-full rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-sm md:text-base transition-all mb-6 md:mb-8">
-                    Connect
+                    <Link href={member.connect} target="_blank">
+                      Connect
+                    </Link>
                   </button>
                 )}
 

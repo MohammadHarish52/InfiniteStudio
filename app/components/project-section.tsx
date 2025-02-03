@@ -2,38 +2,38 @@
 
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export default function ProjectsSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "SpeakClearlyAI",
       description:
-        "A modern, high-performance online store built with Next.js and Stripe integration.",
-      link: "/projects/ecommerce",
-      category: "Web Development",
+        "Trying to make your voice clean so you can focus on the efforts of the part",
+      link: "https://www.speakclearly.xyz/",
+      category: "AI agents",
     },
     {
-      title: "AI Dashboard",
+      title: "Eth signals",
       description:
-        "Analytics dashboard featuring real-time data visualization and machine learning insights.",
-      link: "/projects/ai-dashboard",
-      category: "Data Analytics",
+        "Get latest signals on crypto on what to buy and what to sell",
+      link: "https://crypto-analysis-phi.vercel.app/",
+      category: "Crypto",
     },
     {
-      title: "Mobile Banking App",
-      description:
-        "Secure and intuitive mobile banking application with biometric authentication.",
-      link: "/projects/banking",
-      category: "FinTech",
-    },
-    {
-      title: "Social Platform",
+      title: "Lets Grow Esports",
       description:
         "Community-driven platform with real-time messaging and content sharing capabilities.",
-      link: "/projects/social",
-      category: "Social Media",
+      link: "https://letsgrowesports.xyz/",
+      category: "Esports",
+    },
+    {
+      title: "LetsGrowEsports",
+      description: "A blogging for latest news in the esports industry",
+      link: "https://letsgrowesports.vercel.app/",
+      category: "Esports",
     },
   ];
 
@@ -54,6 +54,8 @@ export default function ProjectsSection() {
             >
               <a
                 href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block p-8 rounded-lg bg-zinc-900/50 hover:bg-zinc-900 transition-colors duration-300 h-full"
               >
                 <div className="flex flex-col justify-between h-full gap-6">
