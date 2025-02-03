@@ -23,11 +23,11 @@ export default function ProjectsSection() {
       category: "Crypto",
     },
     {
-      title: "Lets Grow Esports",
+      title: "Sibling Space",
       description:
-        "Community-driven platform with real-time messaging and content sharing capabilities.",
-      link: "https://letsgrowesports.xyz/",
-      category: "Esports",
+        "Sibling is a mental health support platform fostering community, connection, and shared experiences to empower individuals on their wellness journey.",
+      link: "https://www.sibling.space/",
+      category: "Mental Health",
     },
     {
       title: "LetsGrowEsports",
