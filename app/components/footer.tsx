@@ -5,7 +5,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-black py-24 relative overflow-hidden">
+    <footer className="w-full bg-black py-16 md:py-24 relative overflow-hidden">
       {/* Bottom Gradient Wave */}
       <div
         className="absolute bottom-0 left-0 right-0 h-[40vh] after:absolute after:inset-0 after:bg-black after:blur-3xl after:-bottom-1/2"
@@ -40,45 +40,45 @@ export default function Footer() {
           }
         }
       `}</style>
-      <div className="container mx-auto px-4 md:px-40 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+      <div className="container mx-auto px-6 md:px-8 lg:px-40 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
           {/* Logo Section */}
-          <div>
+          <div className="flex flex-col gap-4">
             <Infinity className="w-8 h-8 text-[#5bc0be]" />
-            <p className="text-sm text-zinc-600">
+            <p className="text-sm text-zinc-500">
               © InfiniteStudio 2025. All rights reserved.
             </p>
           </div>
           {/* Contact Section */}
-          <div>
-            <h3 className="text-xl text-white mb-6">Contact</h3>
+          <div className="flex flex-col gap-4">
+            <h3 className="text-lg font-medium text-white">Contact</h3>
             <Link
               href="mailto:team@infinite.studio"
-              className="text-white hover:text-gray-300 transition-colors flex items-center gap-2"
+              className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
             >
               team@infinite.studio
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
           {/* Social Media Section */}
-          <div>
-            <h3 className="text-xl text-white mb-6">Social Media</h3>
-            <div className="flex gap-4">
+          <div className="flex flex-col gap-4">
+            <h3 className="text-lg font-medium text-white">Social Media</h3>
+            <div className="flex gap-3">
               <Link
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center transition-colors"
+                className="w-9 h-9 rounded-full bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center transition-colors"
               >
-                <Linkedin className="w-5 h-5 text-white" />
+                <Linkedin className="w-4 h-4 text-zinc-400 hover:text-white transition-colors" />
               </Link>
               <Link
                 href="https://x.com/InfinityStudioX"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center transition-colors"
+                className="w-9 h-9 rounded-full bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center transition-colors"
               >
-                <FaXTwitter className="w-5 h-5 text-white" />
+                <FaXTwitter className="w-4 h-4 text-zinc-400 hover:text-white transition-colors" />
               </Link>
             </div>
           </div>
