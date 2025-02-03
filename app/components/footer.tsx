@@ -1,7 +1,7 @@
 "use client";
 import { ArrowUpRight, Infinity, Linkedin } from "lucide-react";
 import Link from "next/link";
-import { FaTwitter } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -73,12 +73,12 @@ export default function Footer() {
                 <Linkedin className="w-5 h-5 text-white" />
               </Link>
               <Link
-                href="https://twitter.com"
+                href="https://x.com/InfinityStudioX"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center transition-colors"
               >
-                <FaTwitter className="w-5 h-5 text-white" />
+                <FaXTwitter className="w-5 h-5 text-white" />
               </Link>
             </div>
           </div>

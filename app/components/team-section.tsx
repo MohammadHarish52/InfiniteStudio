@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function TeamSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -88,8 +89,12 @@ export default function TeamSection() {
                 {/* Connect Button - Only for members with images */}
                 {member.image && (
                   <button className="px-4 py-2 w-full rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-sm md:text-base transition-all mb-6 md:mb-8">
-                    <Link href={member.connect} target="_blank">
-                      Connect
+                    <Link
+                      href={member.connect}
+                      target="_blank"
+                      className="flex items-center justify-center gap-2"
+                    >
+                      Connect <FaXTwitter className="w-4 h-4" />
                     </Link>
                   </button>
                 )}
