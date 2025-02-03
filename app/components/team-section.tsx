@@ -39,7 +39,7 @@ export default function TeamSection() {
         <div className="mb-3 md:mb-4">
           <span className="text-[#5bc0be] text-sm md:text-base">Team</span>
         </div>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-white mb-8 md:mb-16">
+        <h2 className="text-4xl md:text-7xl sm:text-6xl font-medium text-white mb-8 md:mb-16">
           Our Team
         </h2>
 

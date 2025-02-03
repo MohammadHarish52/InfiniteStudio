@@ -40,7 +40,7 @@ export default function ServicesSection() {
         <div className="mb-4">
           <span className="text-[#5bc0be] text-sm md:text-base">Services</span>
         </div>
-        <h2 className="text-6xl md:text-7xl font-medium text-white mb-16">
+        <h2 className="text-4xl md:text-7xl sm:text-6xl font-medium text-white mb-16">
           All-in-one solution
         </h2>
 
