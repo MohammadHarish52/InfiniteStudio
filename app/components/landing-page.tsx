@@ -7,7 +7,7 @@ export default function Component() {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-black text-white relative overflow-hidden">
       {/* Hero Section */}
-      <main className="container flex flex-col items-center justify-center px-4 text-left md:text-center relative z-10">
+      <main className="container flex flex-col items-start md:items-center justify-center px-4 text-left md:text-center relative z-10">
         {/* Heading */}
         <h1 className="text-4xl md:text-7xl sm:text-6xl font-medium tracking-tight mb-6">
           InfiniteStudio builds digital

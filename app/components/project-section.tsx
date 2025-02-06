@@ -86,12 +86,6 @@ export default function ProjectsSection() {
           ))}
         </div>
       </div>
-
-      {/* Subtle gradient overlay */}
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-50 pointer-events-none"
-        aria-hidden="true"
-      />
     </section>
   );
 }

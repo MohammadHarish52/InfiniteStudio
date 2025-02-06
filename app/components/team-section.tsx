@@ -18,15 +18,15 @@ export default function TeamSection() {
 
     {
       name: "Rohan Sharma",
-      role: "Serial Entrepreneur",
-      achievements: ["Won 20+ Hackathons", "Based in London, UK"],
+      role: "Co-Founder  InfiniteStudios",
+      achievements: ["Co-Founder of InfiniteStudios", "Based in India"],
       image: "/rohan.png",
       connect: "https://x.com/rohhaan12",
     },
     {
       name: "Manan Arora",
-      role: "Serial Entrepreneur",
-      achievements: ["Won 20+ Hackathons", "Based in London, UK"],
+      role: "Founder SpeakClearlyAI",
+      achievements: ["Founder of SpeakClearlyAI", "Based in India"],
       image: "/manan.jpg",
       connect: "https://x.com/Manancode",
     },
@@ -112,12 +112,6 @@ export default function TeamSection() {
           ))}
         </div>
       </div>
-
-      {/* Subtle gradient overlay */}
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-50 pointer-events-none"
-        aria-hidden="true"
-      />
     </section>
   );
 }
