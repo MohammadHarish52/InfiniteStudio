@@ -65,7 +65,7 @@ export default function Footer() {
             <h3 className="text-lg font-medium text-white">Social Media</h3>
             <div className="flex gap-3">
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/infinitestudiox/?viewAsMember=true"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center transition-colors"
