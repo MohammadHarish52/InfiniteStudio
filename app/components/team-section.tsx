@@ -13,7 +13,7 @@ export default function TeamSection() {
       role: "Foundeer InfiniteStudios ex crackeddevs",
       achievements: ["Building InfiniteStudios", "Based in Kanpur, India"],
       image: "/harish.png",
-      connect: "https://x.com/Mohamma59305726",
+      connect: "https://x.com/Harish_52",
     },
 
     {
