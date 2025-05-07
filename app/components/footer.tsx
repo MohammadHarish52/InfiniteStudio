@@ -41,45 +41,73 @@ export default function Footer() {
         }
       `}</style>
       <div className="container mx-auto px-6 md:px-8 lg:px-40 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
           {/* Logo Section */}
           <div className="flex flex-col gap-4">
             <Infinity className="w-8 h-8 text-[#5bc0be]" />
+            <div className="relative">
+              <h2 className="text-2xl font-bold tracking-wider uppercase relative">
+                <span className="bg-gradient-to-b from-white via-zinc-300 to-zinc-500 text-transparent bg-clip-text transform transition-transform duration-300 inline-block">
+                  INFINITESTUDIO
+                </span>
+                <span className="absolute -z-10 left-0.5 top-0.5 text-zinc-800 w-full h-full">
+                  INFINITESTUDIO
+                </span>
+              </h2>
+            </div>
             <p className="text-sm text-zinc-500">
               © InfiniteStudio 2025. All rights reserved.
             </p>
           </div>
-          {/* Contact Section */}
-          <div className="flex flex-col gap-4">
-            <h3 className="text-lg font-medium text-white">Contact</h3>
-            <Link
-              href="mailto:team@infinite.studio"
-              className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
-            >
-              team@infinite.studio
-              <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          </div>
-          {/* Social Media Section */}
-          <div className="flex flex-col gap-4">
-            <h3 className="text-lg font-medium text-white">Social Media</h3>
-            <div className="flex gap-3">
+
+          <div className="flex flex-col md:flex-row gap-16">
+            {/* Contact Section */}
+            <div className="flex flex-col gap-4">
+              <h3 className="text-lg font-bold tracking-wider uppercase relative">
+                <span className="bg-gradient-to-b from-white via-zinc-300 to-zinc-500 text-transparent bg-clip-text transform transition-transform duration-300 inline-block">
+                  CONTACT
+                </span>
+                <span className="absolute -z-10 left-0.5 top-0.5 text-zinc-800 w-full h-full">
+                  CONTACT
+                </span>
+              </h3>
               <Link
-                href="https://www.linkedin.com/company/infinitestudiox/?viewAsMember=true"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center transition-colors"
+                href="mailto:team@infinite.studio"
+                className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
               >
-                <Linkedin className="w-4 h-4 text-zinc-400 hover:text-white transition-colors" />
+                team@infinite.studio
+                <ArrowUpRight className="w-4 h-4" />
               </Link>
-              <Link
-                href="https://x.com/InfinityStudioX"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center transition-colors"
-              >
-                <FaXTwitter className="w-4 h-4 text-zinc-400 hover:text-white transition-colors" />
-              </Link>
+            </div>
+            
+            {/* Social Media Section */}
+            <div className="flex flex-col gap-4">
+              <h3 className="text-lg font-bold tracking-wider uppercase relative">
+                <span className="bg-gradient-to-b from-white via-zinc-300 to-zinc-500 text-transparent bg-clip-text transform transition-transform duration-300 inline-block">
+                  SOCIAL MEDIA
+                </span>
+                <span className="absolute -z-10 left-0.5 top-0.5 text-zinc-800 w-full h-full">
+                  SOCIAL MEDIA
+                </span>
+              </h3>
+              <div className="flex gap-3">
+                <Link
+                  href="https://www.linkedin.com/company/infinitestudiox/?viewAsMember=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center transition-colors"
+                >
+                  <Linkedin className="w-4 h-4 text-zinc-400 hover:text-white transition-colors" />
+                </Link>
+                <Link
+                  href="https://x.com/InfinityStudioX"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center transition-colors"
+                >
+                  <FaXTwitter className="w-4 h-4 text-zinc-400 hover:text-white transition-colors" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

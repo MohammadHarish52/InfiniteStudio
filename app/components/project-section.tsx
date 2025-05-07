@@ -40,8 +40,16 @@ export default function ProjectsSection() {
   return (
     <section className="w-full bg-black py-32 relative">
       <div className="container mx-auto px-4 md:px-40">
-        <h2 className="text-4xl font-medium mb-16 text-white">
+        <div className="mb-4">
           <span className="text-[#5bc0be] text-sm md:text-base">Projects</span>
+        </div>
+        <h2 className="text-4xl md:text-7xl sm:text-6xl font-bold tracking-wider mb-16 uppercase relative">
+          <span className="bg-gradient-to-b from-white via-zinc-300 to-zinc-500 text-transparent bg-clip-text transform transition-transform duration-300 inline-block">
+            PROJECTS
+          </span>
+          <span className="absolute -z-10 left-0.5 top-0.5 text-zinc-800 w-full h-full">
+            PROJECTS
+          </span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -63,8 +71,13 @@ export default function ProjectsSection() {
                     <div className="text-sm text-gray-400">
                       {project.category}
                     </div>
-                    <h3 className="text-2xl font-medium text-white group-hover:text-gray-200 transition-colors">
-                      {project.title}
+                    <h3 className="text-2xl font-bold tracking-wider relative mb-2">
+                      <span className="bg-gradient-to-b from-white via-zinc-300 to-zinc-500 text-transparent bg-clip-text transform transition-transform duration-300 inline-block">
+                        {project.title}
+                      </span>
+                      <span className="absolute -z-10 left-0.5 top-0.5 text-zinc-800 w-full h-full">
+                        {project.title}
+                      </span>
                     </h3>
                     <p className="text-gray-400">{project.description}</p>
                   </div>

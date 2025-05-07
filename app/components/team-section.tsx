@@ -16,13 +16,7 @@ export default function TeamSection() {
       connect: "https://x.com/Harish_52",
     },
 
-    {
-      name: "Rohan Sharma",
-      role: "Co-Founder  InfiniteStudios",
-      achievements: ["Co-Founder of InfiniteStudios", "Based in India"],
-      image: "/rohan.png",
-      connect: "https://x.com/rohhaan12",
-    },
+   
     {
       name: "Manan Arora",
       role: "Founder SpeakClearlyAI",
@@ -39,8 +33,13 @@ export default function TeamSection() {
         <div className="mb-3 md:mb-4">
           <span className="text-[#5bc0be] text-sm md:text-base">Team</span>
         </div>
-        <h2 className="text-4xl md:text-7xl sm:text-6xl font-medium text-white mb-8 md:mb-16">
-          Our Team
+        <h2 className="text-4xl md:text-7xl sm:text-6xl font-bold tracking-wider mb-8 md:mb-16 uppercase relative">
+          <span className="bg-gradient-to-b from-white via-zinc-300 to-zinc-500 text-transparent bg-clip-text transform transition-transform duration-300 inline-block">
+            OUR TEAM
+          </span>
+          <span className="absolute -z-10 left-0.5 top-0.5 text-zinc-800 w-full h-full">
+            OUR TEAM
+          </span>
         </h2>
 
         {/* Team Grid */}
@@ -75,8 +74,13 @@ export default function TeamSection() {
                 )}
 
                 {/* Name */}
-                <h3 className="text-xl md:text-2xl font-medium mb-2">
-                  <span className="text-white">{member.name}</span>
+                <h3 className="text-xl md:text-2xl font-bold tracking-wider mb-2 relative">
+                  <span className="bg-gradient-to-b from-white via-zinc-300 to-zinc-500 text-transparent bg-clip-text transform transition-transform duration-300 inline-block">
+                    {member.name}
+                  </span>
+                  <span className="absolute -z-10 left-0.5 top-0.5 text-zinc-800 w-full h-full">
+                    {member.name}
+                  </span>
                 </h3>
 
                 {/* Role & Achievements */}

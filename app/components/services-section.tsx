@@ -40,8 +40,13 @@ export default function ServicesSection() {
         <div className="mb-4">
           <span className="text-[#5bc0be] text-sm md:text-base">Services</span>
         </div>
-        <h2 className="text-4xl md:text-7xl sm:text-6xl font-medium text-white mb-16">
-          All-in-one solution
+        <h2 className="text-4xl md:text-7xl sm:text-6xl font-bold tracking-wider mb-16 uppercase relative">
+          <span className="bg-gradient-to-b from-white via-zinc-300 to-zinc-500 text-transparent bg-clip-text transform transition-transform duration-300 inline-block">
+            ALL-IN-ONE SOLUTION
+          </span>
+          <span className="absolute -z-10 left-0.5 top-0.5 text-zinc-800 w-full h-full">
+            ALL-IN-ONE SOLUTION
+          </span>
         </h2>
 
         {/* Services Grid */}
@@ -64,8 +69,13 @@ export default function ServicesSection() {
 
                   {/* Content */}
                   <div className="flex-grow">
-                    <h3 className="text-2xl font-medium text-white mb-4">
-                      {service.title}
+                    <h3 className="text-2xl font-bold tracking-wider mb-4 relative">
+                      <span className="bg-gradient-to-b from-white via-zinc-300 to-zinc-500 text-transparent bg-clip-text transform transition-transform duration-300 inline-block">
+                        {service.title}
+                      </span>
+                      <span className="absolute -z-10 left-0.5 top-0.5 text-zinc-800 w-full h-full">
+                        {service.title}
+                      </span>
                     </h3>
                     <p className="text-zinc-400 mb-6">{service.description}</p>
                   </div>
