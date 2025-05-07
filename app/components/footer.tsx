@@ -5,10 +5,10 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-black py-16 md:py-24 relative overflow-hidden">
+    <footer className="w-full bg-black py-16 md:py-24 relative overflow-hidden min-h-[300px]">
       {/* Bottom Gradient Wave */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-[40vh] after:absolute after:inset-0 after:bg-black after:blur-3xl after:-bottom-1/2"
+        className="absolute inset-0 w-full h-full after:absolute after:inset-0 after:bg-black after:blur-3xl after:-bottom-1/2"
         style={{
           transform: "scale(1.5)",
           backgroundImage: `
@@ -27,6 +27,7 @@ export default function Footer() {
           backgroundSize: "200% 100%",
           backgroundPosition: "100% 0",
           animation: "gradientFlowReverse 15s linear infinite",
+          opacity: "0.7",
         }}
       />
       {/* CSS Animation */}
