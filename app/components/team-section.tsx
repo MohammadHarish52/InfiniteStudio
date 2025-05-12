@@ -10,7 +10,7 @@ export default function TeamSection() {
   const team = [
     {
       name: "Mohammad Harish",
-      role: "Foundeer InfiniteStudios ex crackeddevs",
+      role: "Foundeer InfiniteStudioX Ex crackeddevs",
       achievements: ["Building InfiniteStudios", "Based in Kanpur, India"],
       image: "/harish.png",
       connect: "https://x.com/Harish_52",
@@ -19,7 +19,7 @@ export default function TeamSection() {
    
     {
       name: "Manan Arora",
-      role: "Founder SpeakClearlyAI",
+      role: "Founder InfiniteStuidioX",
       achievements: ["Founder of SpeakClearlyAI", "Based in India"],
       image: "/manan.jpg",
       connect: "https://x.com/Manancode",
