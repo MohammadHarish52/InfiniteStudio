@@ -11,7 +11,7 @@ export default function TeamSection() {
     {
       name: "Mohammad Harish",
       role: "Founder InfiniteStudiosX |  Ex crackeddevs",
-      achievements: ["Building InfiniteStudios", "Based in Kanpur, India"],
+      achievements: ["Building InfiniteStudiosX", "Based in Kanpur, India"],
       image: "/harish.png",
       connect: "https://x.com/Harish_52",
     },
