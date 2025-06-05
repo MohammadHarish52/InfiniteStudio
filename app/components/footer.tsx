@@ -73,14 +73,14 @@ export default function Footer() {
                 </span>
               </h3>
               <Link
-                href="mailto:team@infinite.studio"
+                href="mailto:xharish52@gmail.com"
                 className="text-zinc-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
               >
-                team@infinite.studio
+                xharish52@gmail.com
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
             </div>
-            
+
             {/* Social Media Section */}
             <div className="flex flex-col gap-4">
               <h3 className="text-lg font-bold tracking-wider uppercase relative">

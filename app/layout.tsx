@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/Navbar";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,14 +20,6 @@ export const metadata: Metadata = {
   title: "InfiniteStudio",
   description:
     "InfiniteStudio is a digital studio that builds digital products that make an impact.",
-  icons: {
-    icon: [
-      { rel: "icon", url: "/favicon.ico" },
-      { rel: "icon", url: "/logo.png" },
-    ],
-    shortcut: "/logo.png",
-    apple: "/logo.png",
-  },
 };
 
 export default function RootLayout({
@@ -35,7 +27,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-    <Analytics />
+      <Analytics />
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
       >
