@@ -111,28 +111,28 @@ export default function ProjectsSection() {
             onMouseLeave={() => setIsHoveringViewAll(false)}
           >
             {/* Liquid glass background effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/5 via-blue-400/5 to-purple-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full animate-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0b132b]/10 via-[#5bc0be]/10 to-[#6fffe9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1c2541]/5 via-[#3a506b]/5 to-[#5bc0be]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full animate-pulse" />
 
             {/* Main text with liquid glass effect */}
             <span className="relative text-xl md:text-2xl font-bold tracking-wider">
               <span
-                className={`bg-gradient-to-r from-cyan-300 via-blue-300 via-purple-300 to-cyan-300 bg-[length:200%_auto] text-transparent bg-clip-text transition-all duration-700 ${
+                className={`bg-gradient-to-b from-white via-zinc-300 to-zinc-500 text-transparent bg-clip-text transform transition-all duration-500 inline-block ${
                   isHoveringViewAll
-                    ? "animate-pulse bg-[position:200%_center]"
-                    : "bg-[position:0%_center]"
+                    ? "scale-105 brightness-110"
+                    : "scale-100 brightness-100"
                 }`}
               >
                 Check all the projects
               </span>
-              <span className="absolute -z-10 left-0.5 top-0.5 text-zinc-800/50 w-full h-full">
+              <span className="absolute -z-10 left-0.5 top-0.5 text-zinc-800 w-full h-full">
                 Check all the projects
               </span>
             </span>
 
             {/* Animated arrow */}
             <div
-              className={`w-8 h-8 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center transition-all duration-300 ${
+              className={`w-8 h-8 rounded-full bg-zinc-800 group-hover:bg-zinc-700 flex items-center justify-center transition-all duration-300 ${
                 isHoveringViewAll ? "scale-110 rotate-12" : "scale-100 rotate-0"
               }`}
             >

@@ -20,6 +20,17 @@ export const metadata: Metadata = {
   title: "InfiniteStudio",
   description:
     "InfiniteStudio is a digital studio that builds digital products that make an impact.",
+  icons: {
+    icon: [
+      {
+        url: "/logo.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
