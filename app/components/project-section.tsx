@@ -101,12 +101,12 @@ export default function ProjectsSection() {
         </div>
 
         {/* View All Projects Link */}
-        <div className="flex justify-center mt-16">
+        <div className="flex justify-center mt-12 md:mt-16">
           <a
             href="https://exciting-durian-f97.notion.site/Agency-13c30606a59a80d884dfe98abd011b24?pvs=4"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-4 px-8 py-4 rounded-full border border-zinc-700 hover:border-zinc-500 transition-all duration-500 overflow-hidden"
+            className="group relative inline-flex items-center gap-2 md:gap-4 px-6 md:px-8 py-3 md:py-4 rounded-full border border-zinc-700 hover:border-zinc-500 transition-all duration-500 overflow-hidden"
             onMouseEnter={() => setIsHoveringViewAll(true)}
             onMouseLeave={() => setIsHoveringViewAll(false)}
           >
@@ -115,7 +115,7 @@ export default function ProjectsSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#1c2541]/5 via-[#3a506b]/5 to-[#5bc0be]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full animate-pulse" />
 
             {/* Animated thinking text effect */}
-            <span className="relative text-xl md:text-2xl font-bold tracking-wider">
+            <span className="relative text-lg md:text-2xl font-bold tracking-wider">
               <span className="inline-block">
                 {"Check all the projects".split("").map((char, index) => (
                   <span
@@ -159,7 +159,7 @@ export default function ProjectsSection() {
 
             {/* Animated arrow */}
             <div
-              className={`w-8 h-8 rounded-full bg-zinc-800 group-hover:bg-zinc-700 flex items-center justify-center transition-all duration-300 ${
+              className={`w-7 h-7 md:w-8 md:h-8 rounded-full bg-zinc-800 group-hover:bg-zinc-700 flex items-center justify-center transition-all duration-300 ${
                 isHoveringViewAll ? "scale-110 rotate-12" : "scale-100 rotate-0"
               }`}
             >
