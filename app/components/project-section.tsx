@@ -114,21 +114,48 @@ export default function ProjectsSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#0b132b]/10 via-[#5bc0be]/10 to-[#6fffe9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#1c2541]/5 via-[#3a506b]/5 to-[#5bc0be]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full animate-pulse" />
 
-            {/* Main text with liquid glass effect */}
+            {/* Animated thinking text effect */}
             <span className="relative text-xl md:text-2xl font-bold tracking-wider">
-              <span
-                className={`bg-gradient-to-b from-white via-zinc-300 to-zinc-500 text-transparent bg-clip-text transform transition-all duration-500 inline-block ${
-                  isHoveringViewAll
-                    ? "scale-105 brightness-110"
-                    : "scale-100 brightness-100"
-                }`}
-              >
-                Check all the projects
+              <span className="inline-block">
+                {"Check all the projects".split("").map((char, index) => (
+                  <span
+                    key={index}
+                    className={`inline-block transform transition-all duration-500 text-white ${
+                      isHoveringViewAll ? "scale-105" : "scale-100"
+                    }`}
+                    style={{
+                      animation: `thinkingColors 3s ease-in-out infinite`,
+                      animationDelay: `${index * 0.1}s`,
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
               </span>
               <span className="absolute -z-10 left-0.5 top-0.5 text-zinc-800 w-full h-full">
                 Check all the projects
               </span>
             </span>
+
+            <style jsx>{`
+              @keyframes thinkingColors {
+                0% {
+                  color: #71717a;
+                }
+                25% {
+                  color: #a1a1aa;
+                }
+                50% {
+                  color: #d4d4d8;
+                }
+                75% {
+                  color: #a1a1aa;
+                }
+                100% {
+                  color: #71717a;
+                }
+              }
+            `}</style>
 
             {/* Animated arrow */}
             <div
