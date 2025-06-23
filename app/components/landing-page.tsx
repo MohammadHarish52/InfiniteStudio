@@ -35,7 +35,10 @@ export default function Component() {
         muted
         playsInline // Important for inline playback on mobile (especially iOS)
       >
-        <source src="/infinity.mp4" type="video/mp4" />
+        <source
+          src={isMobile ? "/infinity (1).mp4" : "/infinity.mp4"}
+          type="video/mp4"
+        />
         Your browser does not support the video tag.
       </video>
 
