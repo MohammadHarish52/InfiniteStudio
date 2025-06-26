@@ -1,42 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { projects } from "@/app/constants/data"; // Adjust the import path as necessary
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
+import { useState } from "react";
 
 export default function ProjectsSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isHoveringViewAll, setIsHoveringViewAll] = useState(false);
-
-  const projects = [
-    {
-      title: "SpeakClearlyAI",
-      description:
-        "Trying to make your voice clean so you can focus on the efforts of the part",
-      link: "https://www.speakclearly.xyz/",
-      category: "AI agents",
-    },
-    {
-      title: "Eth signals",
-      description:
-        "Get latest signals on crypto on what to buy and what to sell",
-      link: "https://crypto-analysis-phi.vercel.app/",
-      category: "Crypto",
-    },
-    {
-      title: "Sibling Space",
-      description:
-        "Sibling is a mental health support platform fostering community, connection, and shared experiences to empower individuals on their wellness journey.",
-      link: "https://www.sibling.space/",
-      category: "Mental Health",
-    },
-    {
-      title: "LetsGrowEsports",
-      description: "A blogging for latest news in the esports industry",
-      link: "https://letsgrowesports.vercel.app/",
-      category: "Esports",
-    },
-  ];
 
   return (
     <section className="w-full bg-black py-32 relative">
