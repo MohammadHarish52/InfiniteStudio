@@ -15,13 +15,7 @@ export const projects = [
     link: "https://www.beyonddream.in/",
     category: "Education",
   },
-  {
-    title: "SpeakClearlyAI",
-    description:
-      "Trying to make your voice clean so you can focus on the efforts of the part",
-    link: "https://www.speakclearly.xyz/",
-    category: "AI agents",
-  },
+
   {
     title: "Sibling Space",
     description:
