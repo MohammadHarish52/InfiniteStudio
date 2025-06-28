@@ -1,6 +1,7 @@
 import LandingPage from "./components/landing-page";
 import ServicesSection from "./components/services-section";
 import ProjectSection from "./components/project-section";
+import PricingSection from "./components/pricing-section";
 import Footer from "./components/footer";
 import TeamSection from "./components/team-section";
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <ServicesSection />
       <TeamSection />
       <ProjectSection />
+      <PricingSection />
       <Footer />
     </>
   );
