@@ -1,37 +1,11 @@
 "use client";
 
+import { services } from "@/app/constants/data"; // Adjust the import path as necessary
+import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
-import { ArrowUpRight, Code2, Laptop, Gauge, Search } from "lucide-react";
 
 export default function ServicesSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const services = [
-    {
-      title: "Custom Web Development",
-      description:
-        "We build tailored web solutions that perfectly align with your business needs and goals, using cutting-edge technologies.",
-      icon: Code2,
-    },
-    {
-      title: "Responsive Design",
-      description:
-        "Our designs adapt seamlessly to all devices, ensuring a consistent and engaging user experience across platforms.",
-      icon: Laptop,
-    },
-    {
-      title: "Performance Optimization",
-      description:
-        "We enhance your web applications for peak performance, ensuring fast load times and smooth user experiences.",
-      icon: Gauge,
-    },
-    {
-      title: "SEO & Analytics",
-      description:
-        "Improve your online visibility and track your success with our comprehensive SEO and analytics services.",
-      icon: Search,
-    },
-  ];
 
   return (
     <section className="w-full bg-black py-32 relative overflow-hidden">

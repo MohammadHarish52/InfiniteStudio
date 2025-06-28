@@ -1,29 +1,11 @@
 "use client";
-import { useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { team } from "@/app/constants/data"; // Adjust the import path as necessary
 import Link from "next/link";
+import { useState } from "react";
 import { FaXTwitter } from "react-icons/fa6";
 
 export default function TeamSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const team = [
-    {
-      name: "Mohammad Harish",
-      role: "Founder InfiniteStudiosX |  Ex crackeddevs",
-      achievements: ["Building InfiniteStudiosX", "Based in Kanpur, India"],
-      image: "/harish.png",
-      connect: "https://x.com/Harish_52",
-    },
-
-    {
-      name: "Manan Arora",
-      role: "Co-Founder InfiniteStudiosX",
-      achievements: ["Building InfiniteStudiosX", "Based in India"],
-      image: "/manan.jpg",
-      connect: "https://x.com/Manancode",
-    },
-  ];
 
   return (
     <section className="w-full bg-black py-16 md:py-32 relative overflow-hidden">
