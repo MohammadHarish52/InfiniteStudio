@@ -2,68 +2,12 @@
 
 import { useState } from "react";
 import { ArrowUpRight, Check } from "lucide-react";
+import { pricingPlans } from "@/app/constants/data";
 
 export default function PricingSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isHoveringContact, setIsHoveringContact] = useState(false);
-
-  const pricingPlans = [
-    {
-      name: "Starter",
-      price: "$2,500",
-      period: "one-time",
-      description:
-        "Perfect for small businesses looking to establish their digital presence",
-      features: [
-        "Custom Website Design",
-        "Mobile Responsive",
-        "Basic SEO Setup",
-        "Contact Forms",
-        "3 Revisions",
-        "30 Days Support",
-      ],
-      category: "Basic Package",
-      popular: false,
-    },
-    {
-      name: "Professional",
-      price: "$5,000",
-      period: "one-time",
-      description:
-        "Ideal for growing businesses that need advanced functionality",
-      features: [
-        "Everything in Starter",
-        "Advanced Animations",
-        "CMS Integration",
-        "E-commerce Ready",
-        "Analytics Setup",
-        "Unlimited Revisions",
-        "90 Days Support",
-        "Performance Optimization",
-      ],
-      category: "Most Popular",
-      popular: true,
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      period: "quote",
-      description:
-        "For large-scale projects requiring custom solutions and ongoing support",
-      features: [
-        "Everything in Professional",
-        "Custom Backend Development",
-        "Third-party Integrations",
-        "Advanced Security",
-        "Multi-language Support",
-        "Dedicated Project Manager",
-        "Priority Support",
-        "6 Months Maintenance",
-      ],
-      category: "Premium Package",
-      popular: false,
-    },
-  ];
+  const [isDesignIncluded, setIsDesignIncluded] = useState(true);
 
   return (
     <section className="w-full bg-black py-32 relative">
@@ -79,6 +23,40 @@ export default function PricingSection() {
             PRICING
           </span>
         </h2>
+
+        {/* Toggle Switch */}
+        <div className="flex justify-center mb-12">
+          <div className="relative bg-zinc-900 p-1 rounded-lg border border-zinc-700">
+            <div className="flex relative">
+              <button
+                onClick={() => setIsDesignIncluded(false)}
+                className={`px-6 py-3 text-sm font-medium rounded-md transition-all duration-300 relative z-10 ${
+                  !isDesignIncluded
+                    ? "text-white"
+                    : "text-zinc-400 hover:text-zinc-300"
+                }`}
+              >
+                Development Only
+              </button>
+              <button
+                onClick={() => setIsDesignIncluded(true)}
+                className={`px-6 py-3 text-sm font-medium rounded-md transition-all duration-300 relative z-10 ${
+                  isDesignIncluded
+                    ? "text-white"
+                    : "text-zinc-400 hover:text-zinc-300"
+                }`}
+              >
+                Design + Development
+              </button>
+              {/* Sliding Background */}
+              <div
+                className={`absolute top-1 bottom-1 bg-zinc-700 rounded-md transition-all duration-300 ease-in-out ${
+                  isDesignIncluded ? "left-1/2 right-1" : "left-1 right-1/2"
+                }`}
+              />
+            </div>
+          </div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {pricingPlans.map((plan, index) => (
@@ -132,7 +110,9 @@ export default function PricingSection() {
                     <div className="space-y-1">
                       <div className="flex items-baseline gap-2">
                         <span className="text-4xl font-bold text-white">
-                          {plan.price}
+                          {isDesignIncluded
+                            ? plan.priceDesignDev
+                            : plan.priceDevOnly}
                         </span>
                         <span className="text-gray-400 text-sm">
                           /{plan.period}
@@ -144,7 +124,10 @@ export default function PricingSection() {
                     </div>
 
                     <div className="space-y-3">
-                      {plan.features.map((feature, featureIndex) => (
+                      {(isDesignIncluded
+                        ? plan.featuresDesignDev
+                        : plan.featuresDevOnly
+                      ).map((feature, featureIndex) => (
                         <div
                           key={featureIndex}
                           className="flex items-center gap-3"
@@ -202,42 +185,6 @@ export default function PricingSection() {
                             }
                           : {}
                       }
-                      onMouseEnter={(e) => {
-                        if (plan.popular) {
-                          const target = e.target as HTMLButtonElement;
-                          target.style.backgroundImage = `
-                            linear-gradient(
-                              to right,
-                              #0a0a0a,   /* Deep black */
-                              #1a1a1a,   /* Dark gray */
-                              #2a2a2a,   /* Medium gray */
-                              #5bc0be,   /* Neon cyan accent */
-                              #6fffe9,   /* Bright cyan highlight */
-                              #5bc0be,   /* Neon cyan accent */
-                              #2a2a2a,   /* Medium gray */
-                              #0a0a0a    /* Deep black */
-                            )
-                          `;
-                        }
-                      }}
-                      onMouseLeave={(e) => {
-                        if (plan.popular) {
-                          const target = e.target as HTMLButtonElement;
-                          target.style.backgroundImage = `
-                            linear-gradient(
-                              to right,
-                              #0a0a0a,   /* Deep black */
-                              #1a1a1a,   /* Dark gray */
-                              #2a2a2a,   /* Medium gray */
-                              #3a3a3a,   /* Lighter gray */
-                              #4a4a4a,   /* Even lighter gray */
-                              #3a3a3a,   /* Back to lighter gray */
-                              #2a2a2a,   /* Medium gray */
-                              #0a0a0a    /* Deep black */
-                            )
-                          `;
-                        }
-                      }}
                     >
                       Get Started
                     </button>
