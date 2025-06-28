@@ -252,7 +252,7 @@ export default function PricingSection() {
         <div className="flex justify-center mt-12 md:mt-16">
           <a
             href="/contact"
-            className="group relative inline-flex items-center gap-2 md:gap-4 px-6 md:px-8 py-3 md:py-4 rounded-full border border-zinc-700 hover:border-zinc-500 transition-all duration-500 overflow-hidden"
+            className="group relative inline-flex items-center gap-2 md:gap-4 px-6 md:px-8 py-3 md:py-4 rounded-lg border border-zinc-700 hover:border-zinc-500 transition-all duration-500 overflow-hidden"
             onMouseEnter={() => setIsHoveringContact(true)}
             onMouseLeave={() => setIsHoveringContact(false)}
           >

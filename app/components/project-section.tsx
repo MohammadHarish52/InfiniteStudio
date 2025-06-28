@@ -76,7 +76,7 @@ export default function ProjectsSection() {
             href="https://exciting-durian-f97.notion.site/Agency-13c30606a59a80d884dfe98abd011b24?pvs=4"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-2 md:gap-4 px-6 md:px-8 py-3 md:py-4 rounded-full border border-zinc-700 hover:border-zinc-500 transition-all duration-500 overflow-hidden"
+            className="group relative inline-flex items-center gap-2 md:gap-4 px-6 md:px-8 py-3 md:py-4 rounded-lg border border-zinc-700 hover:border-zinc-500 transition-all duration-500 overflow-hidden"
             onMouseEnter={() => setIsHoveringViewAll(true)}
             onMouseLeave={() => setIsHoveringViewAll(false)}
           >
