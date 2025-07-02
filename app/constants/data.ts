@@ -1,6 +1,7 @@
 import { Code2, Gauge, Laptop, Search } from "lucide-react";
+import { Project, Service, TeamMember, PricingPlan } from "@/app/types";
 
-export const projects = [
+export const projects: Project[] = [
   {
     title: "Fast&Fab",
     description:
@@ -31,7 +32,7 @@ export const projects = [
   },
 ];
 
-export const services = [
+export const services: Service[] = [
   {
     title: "Custom Web Development",
     description:
@@ -47,7 +48,7 @@ export const services = [
   {
     title: "Performance Optimization",
     description:
-      "We enhance your web applications for peak performance, ensuring fast load times and smooth user experiences.",
+      "We enhance your web applications for peak performance, ensuring fast load times and a smooth user experience.",
     icon: Gauge,
   },
   {
@@ -58,7 +59,7 @@ export const services = [
   },
 ];
 
-export const team = [
+export const team: TeamMember[] = [
   {
     name: "Mohammad Harish",
     role: "Founder InfiniteStudiosX |  Ex crackeddevs",
@@ -76,7 +77,7 @@ export const team = [
   },
 ];
 
-export const pricingPlans = [
+export const pricingPlans: PricingPlan[] = [
   {
     name: "Starter",
     priceDevOnly: "$1,999",
