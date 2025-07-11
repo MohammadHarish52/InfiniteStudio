@@ -1,5 +1,5 @@
+import { PricingPlan, Project, Service, TeamMember } from "@/app/types";
 import { Code2, Gauge, Laptop, Search } from "lucide-react";
-import { Project, Service, TeamMember, PricingPlan } from "@/app/types";
 
 export const projects: Project[] = [
   {
@@ -65,7 +65,7 @@ export const team: TeamMember[] = [
     role: "Founder InfiniteStudiosX |  Ex crackeddevs",
     achievements: ["Building InfiniteStudiosX", "Based in Kanpur, India"],
     image: "/harish.png",
-    connect: "https://x.com/RustyTachyon",
+    connect: "https://x.com/Haarish_52",
   },
 
   {
