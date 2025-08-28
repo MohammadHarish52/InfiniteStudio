@@ -101,7 +101,7 @@ export default function Footer() {
                   <Linkedin className="w-4 h-4 text-zinc-400 hover:text-white transition-colors" />
                 </Link>
                 <Link
-                  href="https://x.com/InfinityStudioX"
+                  href="https://x.com/InfiniteStudioX"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-full bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center transition-colors"
