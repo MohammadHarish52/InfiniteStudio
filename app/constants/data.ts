@@ -65,7 +65,7 @@ export const team: TeamMember[] = [
     role: "Founder InfiniteStudiosX |  Ex crackeddevs",
     achievements: ["Building InfiniteStudiosX", "Based in Kanpur, India"],
     image: "/harish.png",
-    connect: "https://x.com/wizard_32",
+    connect: "https://x.com/Harish_52",
   },
 
   {
