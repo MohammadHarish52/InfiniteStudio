@@ -3,13 +3,14 @@
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import ArrowUpRightIcon from "./icons/ArrowUpRightIcon";
 import ArrowUpRightWhiteIcon from "./icons/ArrowUpRightWhiteIcon";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const scrollPositionRef = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +21,28 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Prevent body scroll when mobile menu is open - simpler approach
+  useEffect(() => {
+    if (isMenuOpen) {
+      // Save current scroll position
+      scrollPositionRef.current = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Apply scroll lock class to body and html
+      document.body.classList.add('modal-open');
+      document.documentElement.classList.add('modal-open');
+      document.body.style.top = `-${scrollPositionRef.current}px`;
+      
+      return () => {
+        // Remove scroll lock class
+        document.body.classList.remove('modal-open');
+        document.documentElement.classList.remove('modal-open');
+        document.body.style.top = '';
+        // Restore scroll position
+        window.scrollTo(0, scrollPositionRef.current);
+      };
+    }
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -56,7 +79,7 @@ export function Navbar() {
       }`}
     >
       <div className="px-6 md:px-12 lg:px-20 py-8">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-3 items-center">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-3 items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center z-50 justify-start">
             <Image
@@ -69,7 +92,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation - Centered between logo and button */}
-          <nav className="hidden md:flex items-center justify-center gap-12">
+          <nav className="hidden md:flex items-center justify-center gap-12 md:col-start-2">
             <Link
               href="#services"
               onClick={(e) => handleSmoothScroll(e, "#services")}
@@ -140,7 +163,7 @@ export function Navbar() {
           <div className="md:hidden flex justify-end col-start-3">
             <button
               onClick={toggleMenu}
-              className="text-white hover:opacity-80 transition-opacity z-50"
+              className="text-white hover:opacity-80 transition-opacity relative z-[10000]"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
@@ -151,79 +174,92 @@ export function Navbar() {
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
+      {/* Mobile Menu Modal - Moved outside navbar container */}
+      {isMenuOpen && (
         <div
-          className={`fixed top-0 left-0 right-0 bottom-0 bg-black/95 backdrop-blur-md transition-all duration-300 ease-in-out md:hidden ${
-            isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
-          style={{ zIndex: 40 }}
+          className="fixed inset-0 z-[9999] md:hidden"
+          onClick={closeMenu}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation menu"
         >
-          <div className="flex flex-col items-center justify-center h-full gap-8 px-6">
-            <Link
-              href="#services"
-              onClick={(e) => handleSmoothScroll(e, "#services")}
-              className="text-white text-2xl font-medium tracking-tight hover:opacity-80 transition-opacity"
-              style={{ letterSpacing: "-0.80px" }}
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-black/95 backdrop-blur-md"
+            onClick={closeMenu}
+          />
+            
+            {/* Modal Content */}
+            <div 
+              className="absolute inset-0 flex flex-col items-center justify-center gap-8 px-6"
+              onClick={(e) => e.stopPropagation()}
             >
-              Services
-            </Link>
-            <Link
-              href="#team"
-              onClick={(e) => handleSmoothScroll(e, "#team")}
-              className="text-white text-2xl font-medium tracking-tight hover:opacity-80 transition-opacity"
-              style={{ letterSpacing: "-0.80px" }}
-            >
-              Team
-            </Link>
-            <Link
-              href="#projects"
-              onClick={(e) => handleSmoothScroll(e, "#projects")}
-              className="text-white text-2xl font-medium tracking-tight hover:opacity-80 transition-opacity"
-              style={{ letterSpacing: "-0.80px" }}
-            >
-              Projects
-            </Link>
-            <Link
-              href="https://calendly.com/xharish52/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={closeMenu}
-              className="flex items-center justify-center rounded-full border-[1.5px] border-zinc-700/50 hover:border-zinc-600/70 hover:opacity-90 transition-all duration-300 relative overflow-hidden group mt-4"
-              style={{
-                height: "48px",
-                gap: "16px",
-                paddingTop: "5px",
-                paddingRight: "20px",
-                paddingBottom: "5px",
-                paddingLeft: "24px",
-                background:
-                  "linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)",
-                color: "#FFFFFF",
-                fontWeight: 500,
-                lineHeight: "100%",
-                letterSpacing: "-4%",
-              }}
-            >
-              <span className="relative z-10 text-base font-medium tracking-tight">
-                Book a Call
-              </span>
-              <div
-                className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 relative z-10"
+              <Link
+                href="#services"
+                onClick={(e) => handleSmoothScroll(e, "#services")}
+                className="text-white text-2xl font-medium tracking-tight hover:opacity-80 transition-opacity"
+                style={{ letterSpacing: "-0.80px" }}
+              >
+                Services
+              </Link>
+              <Link
+                href="#team"
+                onClick={(e) => handleSmoothScroll(e, "#team")}
+                className="text-white text-2xl font-medium tracking-tight hover:opacity-80 transition-opacity"
+                style={{ letterSpacing: "-0.80px" }}
+              >
+                Team
+              </Link>
+              <Link
+                href="#projects"
+                onClick={(e) => handleSmoothScroll(e, "#projects")}
+                className="text-white text-2xl font-medium tracking-tight hover:opacity-80 transition-opacity"
+                style={{ letterSpacing: "-0.80px" }}
+              >
+                Projects
+              </Link>
+              <Link
+                href="https://calendly.com/xharish52/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenu}
+                className="flex items-center justify-center rounded-full border-[1.5px] border-zinc-700/50 hover:border-zinc-600/70 hover:opacity-90 transition-all duration-300 relative overflow-hidden group mt-4"
                 style={{
-                  backgroundColor: "rgba(20, 184, 166, 0.2)",
+                  height: "48px",
+                  gap: "16px",
+                  paddingTop: "5px",
+                  paddingRight: "20px",
+                  paddingBottom: "5px",
+                  paddingLeft: "24px",
+                  background:
+                    "linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)",
+                  color: "#FFFFFF",
+                  fontWeight: 500,
+                  lineHeight: "100%",
+                  letterSpacing: "-4%",
                 }}
               >
-                <ArrowUpRightWhiteIcon
-                  className="w-3 h-3"
-                  color="#14B8A6"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#0a0a0a] to-[#1a1a1a] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </Link>
+                <span className="relative z-10 text-base font-medium tracking-tight">
+                  Book a Call
+                </span>
+                <div
+                  className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 relative z-10"
+                  style={{
+                    backgroundColor: "rgba(20, 184, 166, 0.2)",
+                  }}
+                >
+                  <ArrowUpRightWhiteIcon
+                    className="w-3 h-3"
+                    color="#14B8A6"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#0a0a0a] to-[#1a1a1a] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+            </div>
           </div>
-        </div>
-      </div>
+        )}
     </nav>
   );
 }

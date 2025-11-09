@@ -82,4 +82,18 @@ body {
   html {
     scroll-behavior: smooth;
   }
+  
+  /* Prevent scrolling when modal is open */
+  body.modal-open {
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    touch-action: none;
+    -webkit-overflow-scrolling: none;
+  }
+  
+  html.modal-open {
+    overflow: hidden;
+    touch-action: none;
+  }
 }
