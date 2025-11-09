@@ -55,7 +55,7 @@ export default function Component() {
                 Precision, Framed in Possibility.
               </h1>
               <p
-                className="text-white text-xs md:text-sm font-normal tracking-tight opacity-70 text-center"
+                className="text-white text-xs md:text-base font-normal tracking-tight opacity-70 text-center"
                 style={{ letterSpacing: "-0.12px" }}
               >
                 A creative agency balancing raw vision with refined execution.
