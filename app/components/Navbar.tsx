@@ -94,20 +94,14 @@ export function Navbar() {
             >
               About
             </Link>
-            <Link
-              href="#contact"
-              onClick={(e) => handleSmoothScroll(e, "#contact")}
-              className="text-white text-xl font-medium tracking-tight hover:opacity-80 transition-opacity"
-              style={{ letterSpacing: "-0.80px" }}
-            >
-              Contact
-            </Link>
           </nav>
 
           {/* Desktop Book a Call Button */}
           <div className="hidden md:flex justify-end">
             <Link
-              href="/book-meeting"
+              href="https://calendly.com/xharish52/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center rounded-full border-[1.5px] border-zinc-700/50 hover:border-zinc-600/70 hover:opacity-90 transition-all duration-300 relative overflow-hidden group"
               style={{
                 height: "48px",
@@ -191,15 +185,9 @@ export function Navbar() {
               About
             </Link>
             <Link
-              href="#contact"
-              onClick={(e) => handleSmoothScroll(e, "#contact")}
-              className="text-white text-2xl font-medium tracking-tight hover:opacity-80 transition-opacity"
-              style={{ letterSpacing: "-0.80px" }}
-            >
-              Contact
-            </Link>
-            <Link
-              href="/book-meeting"
+              href="https://calendly.com/xharish52/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={closeMenu}
               className="flex items-center justify-center rounded-full border-[1.5px] border-zinc-700/50 hover:border-zinc-600/70 hover:opacity-90 transition-all duration-300 relative overflow-hidden group mt-4"
               style={{

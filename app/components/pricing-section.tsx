@@ -200,7 +200,9 @@ export default function PricingSection() {
         {/* Contact for Custom Quote */}
         <div className="flex justify-center mt-12 md:mt-16">
           <a
-            href="/contact"
+            href="https://calendly.com/xharish52/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center rounded-full border-[1.5px] border-zinc-700/50 hover:border-zinc-600/70 hover:opacity-90 transition-all duration-300 relative overflow-hidden group"
             style={{
               height: "48px",
