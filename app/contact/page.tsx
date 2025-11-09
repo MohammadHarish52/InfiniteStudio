@@ -94,11 +94,22 @@ export default function ContactForm() {
       <div className="container mx-auto px-4 md:px-40 py-32">
         <div className="max-w-6xl mx-auto">
           <div className="mb-4">
-            <span className="text-[#5bc0be] text-sm md:text-base">Contact</span>
+            <span className="text-[#14B8A6] text-sm md:text-base">Contact</span>
           </div>
           <div className="mb-16">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-white mb-6">
-              Let's work together
+            <h1
+              className="font-medium text-center text-4xl sm:text-5xl md:text-6xl lg:text-[64px] mb-6"
+              style={{
+                lineHeight: "100%",
+                letterSpacing: "-4%",
+                background:
+                  "linear-gradient(88.56deg, rgba(255,255,255,1) 60.44%, rgba(255,255,255,0.5) 92.1%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Let's Work Together
             </h1>
             <p className="text-lg text-zinc-400 max-w-2xl">
               Tell us about your project and let's create something
@@ -148,7 +159,7 @@ export default function ContactForm() {
                           <FormControl>
                             <Input
                               {...field}
-                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#5bc0be] focus:border-[#5bc0be]"
+                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#14B8A6] focus:border-[#14B8A6]"
                             />
                           </FormControl>
                         </FormItem>
@@ -165,7 +176,7 @@ export default function ContactForm() {
                           <FormControl>
                             <Input
                               {...field}
-                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#5bc0be] focus:border-[#5bc0be]"
+                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#14B8A6] focus:border-[#14B8A6]"
                             />
                           </FormControl>
                         </FormItem>
@@ -186,7 +197,7 @@ export default function ContactForm() {
                             <Input
                               {...field}
                               type="email"
-                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#5bc0be] focus:border-[#5bc0be]"
+                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#14B8A6] focus:border-[#14B8A6]"
                             />
                           </FormControl>
                         </FormItem>
@@ -204,7 +215,7 @@ export default function ContactForm() {
                           <FormControl>
                             <Input
                               {...field}
-                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#5bc0be] focus:border-[#5bc0be]"
+                              className="bg-[#0A0A0A] border-zinc-800 text-white h-12 focus:ring-1 focus:ring-[#14B8A6] focus:border-[#14B8A6]"
                             />
                           </FormControl>
                         </FormItem>
@@ -293,7 +304,7 @@ export default function ContactForm() {
                           <FormControl>
                             <Textarea
                               {...field}
-                              className="bg-[#0A0A0A] border-zinc-800 text-white min-h-[120px] focus:ring-1 focus:ring-[#5bc0be] focus:border-[#5bc0be]"
+                              className="bg-[#0A0A0A] border-zinc-800 text-white min-h-[120px] focus:ring-1 focus:ring-[#14B8A6] focus:border-[#14B8A6]"
                             />
                           </FormControl>
                         </FormItem>
@@ -309,7 +320,7 @@ export default function ContactForm() {
                             <Checkbox
                               checked={field.value}
                               onCheckedChange={field.onChange}
-                              className="bg-[#0A0A0A] border-zinc-800 data-[state=checked]:bg-[#5bc0be]"
+                              className="bg-[#0A0A0A] border-zinc-800 data-[state=checked]:bg-[#14B8A6]"
                             />
                           </FormControl>
                           <div className="space-y-1 leading-none">
@@ -325,9 +336,16 @@ export default function ContactForm() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full px-4 py-2 rounded-lg bg-[#0A0A0A] hover:bg-zinc-900 text-white transition-all border border-zinc-800 hover:border-zinc-700 disabled:opacity-50"
+                      className="w-full px-4 py-2 rounded-lg text-white transition-all duration-300 relative overflow-hidden group disabled:opacity-50"
+                      style={{
+                        background: "linear-gradient(135deg, #14B8A6 0%, #0D9488 100%)",
+                        border: "1px solid transparent",
+                      }}
                     >
-                      {loading ? "Submitting..." : "Submit"}
+                      <span className="relative z-10">
+                        {loading ? "Submitting..." : "Submit"}
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#14B8A6] via-[#0D9488] to-[#14B8A6] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </button>
 
                     {error && <p className="text-red-500 text-sm">{error}</p>}

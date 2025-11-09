@@ -3,25 +3,38 @@
 import { useState } from "react";
 import { ArrowUpRight, Check } from "lucide-react";
 import { pricingPlans } from "@/app/constants/data";
+import ArrowUpRightWhiteIcon from "./icons/ArrowUpRightWhiteIcon";
 
 export default function PricingSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [isHoveringContact, setIsHoveringContact] = useState(false);
   const [isDesignIncluded, setIsDesignIncluded] = useState(true);
 
   return (
-    <section className="w-full bg-black py-32 relative">
-      <div className="container mx-auto px-4 md:px-40">
+    <section className="w-full bg-black py-32 relative overflow-hidden">
+      {/* Gradient Background - Dark Top with Light Bottom (Lower) */}
+      <div
+        className="absolute inset-0 w-full h-full"
+        style={{
+          background: "linear-gradient(to bottom, #0B0F0E 0%, #0D1816 60%, #0F2420 100%)",
+        }}
+      />
+      <div className="container mx-auto px-4 md:px-40 relative z-10">
         <div className="mb-4">
-          <span className="text-[#5bc0be] text-sm md:text-base">Pricing</span>
+          <span className="text-[#14B8A6] text-sm md:text-base">Pricing</span>
         </div>
-        <h2 className="text-4xl md:text-7xl sm:text-6xl font-bold tracking-wider mb-16 uppercase relative">
-          <span className="bg-gradient-to-b from-white via-zinc-300 to-zinc-500 text-transparent bg-clip-text transform transition-transform duration-300 inline-block">
-            PRICING
-          </span>
-          <span className="absolute -z-10 left-0.5 top-0.5 text-zinc-800 w-full h-full">
-            PRICING
-          </span>
+        <h2
+          className="font-medium text-center text-4xl sm:text-5xl md:text-6xl lg:text-[64px] mb-16"
+          style={{
+            lineHeight: "100%",
+            letterSpacing: "-4%",
+            background:
+              "linear-gradient(88.56deg, rgba(255,255,255,1) 60.44%, rgba(255,255,255,0.5) 92.1%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
+        >
+          Pricing
         </h2>
 
         {/* Toggle Switch */}
@@ -75,15 +88,20 @@ export default function PricingSection() {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div
-                className={`p-8 rounded-lg transition-all duration-300 h-full relative overflow-hidden ${
+                className={`p-8 rounded-lg transition-all duration-300 h-full relative overflow-hidden group-hover:shadow-[0_8px_12px_-2px_rgba(0,0,0,0.4),0_4px_6px_-1px_rgba(0,0,0,0.3),inset_0_1px_0_0_rgba(255,255,255,0.05)] ${
                   plan.popular
-                    ? "bg-gradient-to-b from-zinc-900 to-zinc-800 border border-[#5bc0be]/30"
-                    : "bg-zinc-900/50 hover:bg-zinc-900"
+                    ? "bg-gradient-to-b from-zinc-900 to-zinc-800 border border-[#14B8A6]/30"
+                    : "bg-[#0A0A0A] border border-zinc-700/40 hover:border-zinc-600/60"
                 }`}
+                style={{
+                  boxShadow: plan.popular 
+                    ? "0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.05), 0 0 0 1px rgba(20, 184, 166, 0.1)"
+                    : "0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.05)",
+                }}
               >
                 {plan.popular && (
-                  <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-[#5bc0be] to-[#6fffe9] p-0.5 transition-all duration-300 group-hover:from-[#5bc0be] group-hover:to-[#6fffe9] group-hover:shadow-lg group-hover:shadow-[#5bc0be]/50">
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#5bc0be]/20 to-[#6fffe9]/20 animate-pulse group-hover:from-[#5bc0be]/40 group-hover:to-[#6fffe9]/40 transition-all duration-300" />
+                  <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-[#14B8A6] to-[#0D9488] p-0.5 transition-all duration-300 group-hover:from-[#14B8A6] group-hover:to-[#0D9488] group-hover:shadow-2xl group-hover:shadow-[#14B8A6]/50">
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#14B8A6]/20 to-[#0D9488]/20 animate-pulse group-hover:from-[#14B8A6]/40 group-hover:to-[#0D9488]/40 transition-all duration-300" />
                   </div>
                 )}
 
@@ -92,7 +110,7 @@ export default function PricingSection() {
                     <div className="space-y-2">
                       <div
                         className={`text-sm ${
-                          plan.popular ? "text-[#5bc0be]" : "text-gray-400"
+                          plan.popular ? "text-[#14B8A6]" : "text-gray-400"
                         }`}
                       >
                         {plan.category}
@@ -134,12 +152,12 @@ export default function PricingSection() {
                         >
                           <div
                             className={`w-5 h-5 rounded-full flex items-center justify-center ${
-                              plan.popular ? "bg-[#5bc0be]/20" : "bg-zinc-800"
+                              plan.popular ? "bg-[#14B8A6]/20" : "bg-zinc-800"
                             }`}
                           >
                             <Check
                               className={`w-3 h-3 ${
-                                plan.popular ? "text-[#5bc0be]" : "text-white"
+                                plan.popular ? "text-[#14B8A6]" : "text-white"
                               }`}
                             />
                           </div>
@@ -153,9 +171,9 @@ export default function PricingSection() {
 
                   <div className="pt-4">
                     <button
-                      className={`w-full py-4 px-6 rounded-lg font-semibold transition-all duration-300 relative overflow-hidden ${
+                      className={`w-full py-4 px-6 rounded-lg font-semibold transition-all duration-300 relative overflow-hidden group ${
                         plan.popular
-                          ? "text-white hover:shadow-lg hover:shadow-[#5bc0be]/25 hover:shadow-2xl"
+                          ? "text-white hover:shadow-2xl hover:shadow-[#14B8A6]/25"
                           : "bg-zinc-800 text-white hover:bg-zinc-700"
                       } ${
                         hoveredIndex === index
@@ -165,23 +183,7 @@ export default function PricingSection() {
                       style={
                         plan.popular
                           ? {
-                              backgroundImage: `
-                           linear-gradient(
-                             to right,
-                             #0a0a0a,   /* Deep black */
-                             #1a1a1a,   /* Dark gray */
-                             #2a2a2a,   /* Medium gray */
-                             #3a3a3a,   /* Lighter gray */
-                             #4a4a4a,   /* Even lighter gray */
-                             #3a3a3a,   /* Back to lighter gray */
-                             #2a2a2a,   /* Medium gray */
-                             #0a0a0a    /* Deep black */
-                           )
-                         `,
-                              backgroundSize: "200% 100%",
-                              backgroundPosition: "0% 0",
-                              animation: "gradientFlow 15s linear infinite",
-                              transition: "all 0.3s ease",
+                              background: "linear-gradient(135deg, #14B8A6 0%, #0D9488 100%)",
                             }
                           : {}
                       }
@@ -199,78 +201,37 @@ export default function PricingSection() {
         <div className="flex justify-center mt-12 md:mt-16">
           <a
             href="/contact"
-            className="group relative inline-flex items-center gap-2 md:gap-4 px-6 md:px-8 py-3 md:py-4 rounded-lg border border-zinc-700 hover:border-zinc-500 transition-all duration-500 overflow-hidden"
-            onMouseEnter={() => setIsHoveringContact(true)}
-            onMouseLeave={() => setIsHoveringContact(false)}
+            className="flex items-center justify-center rounded-full border-[1.5px] border-zinc-700/50 hover:border-zinc-600/70 hover:opacity-90 transition-all duration-300 relative overflow-hidden group"
+            style={{
+              height: "48px",
+              gap: "16px",
+              paddingTop: "5px",
+              paddingRight: "20px",
+              paddingBottom: "5px",
+              paddingLeft: "24px",
+              background:
+                "linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)",
+              color: "#FFFFFF",
+              fontWeight: 500,
+              lineHeight: "100%",
+              letterSpacing: "-4%",
+            }}
           >
-            {/* Liquid glass background effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0b132b]/10 via-[#5bc0be]/10 to-[#6fffe9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1c2541]/5 via-[#3a506b]/5 to-[#5bc0be]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full animate-pulse" />
-
-            {/* Animated thinking text effect */}
-            <span className="relative text-lg md:text-2xl font-bold tracking-wider">
-              <span className="inline-block">
-                {"Need a custom quote?".split("").map((char, index) => (
-                  <span
-                    key={index}
-                    className={`inline-block transform transition-all duration-500 text-white ${
-                      isHoveringContact ? "scale-105" : "scale-100"
-                    }`}
-                    style={{
-                      animation: `thinkingColors 3s ease-in-out infinite`,
-                      animationDelay: `${index * 0.1}s`,
-                    }}
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </span>
-                ))}
-              </span>
-              <span className="absolute -z-10 left-0.5 top-0.5 text-zinc-800 w-full h-full">
-                Need a custom quote?
-              </span>
+            <span className="relative z-10 text-base sm:text-lg md:text-[20px]">
+              Need a custom quote?
             </span>
-
-            <style jsx>{`
-              @keyframes thinkingColors {
-                0% {
-                  color: #71717a;
-                }
-                25% {
-                  color: #a1a1aa;
-                }
-                50% {
-                  color: #d4d4d8;
-                }
-                75% {
-                  color: #a1a1aa;
-                }
-                100% {
-                  color: #71717a;
-                }
-              }
-
-              @keyframes gradientFlow {
-                0% {
-                  background-position: 0% 0;
-                }
-                100% {
-                  background-position: 200% 0;
-                }
-              }
-            `}</style>
-
-            {/* Animated arrow */}
             <div
-              className={`w-7 h-7 md:w-8 md:h-8 rounded-full bg-zinc-800 group-hover:bg-zinc-700 flex items-center justify-center transition-all duration-300 ${
-                isHoveringContact ? "scale-110 rotate-12" : "scale-100 rotate-0"
-              }`}
+              className="w-5 h-5 sm:w-[22px] sm:h-[22px] rounded-full flex items-center justify-center flex-shrink-0 relative z-10"
+              style={{
+                backgroundColor: "rgba(20, 184, 166, 0.2)",
+              }}
             >
-              <ArrowUpRight
-                className={`w-4 h-4 text-white transition-transform duration-300 ${
-                  isHoveringContact ? "translate-x-0.5 -translate-y-0.5" : ""
-                }`}
+              <ArrowUpRightWhiteIcon
+                className="w-3 h-3 sm:w-[14px] sm:h-[14px]"
+                color="#14B8A6"
               />
             </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#0a0a0a] to-[#1a1a1a] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </a>
         </div>
       </div>
