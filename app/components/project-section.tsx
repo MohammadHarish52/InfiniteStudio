@@ -9,7 +9,7 @@ export default function ProjectsSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="about" className="w-full bg-black py-32 relative overflow-hidden">
+    <section id="projects" className="w-full bg-black py-32 relative overflow-hidden">
       {/* Gradient Background - Light Top with Dark Bottom (Upper) */}
       <div
         className="absolute inset-0 w-full h-full"

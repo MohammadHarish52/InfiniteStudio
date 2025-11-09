@@ -87,12 +87,12 @@ export function Navbar() {
               Team
             </Link>
             <Link
-              href="#about"
-              onClick={(e) => handleSmoothScroll(e, "#about")}
+              href="#projects"
+              onClick={(e) => handleSmoothScroll(e, "#projects")}
               className="text-white text-xl font-medium tracking-tight hover:opacity-80 transition-opacity"
               style={{ letterSpacing: "-0.80px" }}
             >
-              About
+              Projects
             </Link>
           </nav>
 
@@ -177,12 +177,12 @@ export function Navbar() {
               Team
             </Link>
             <Link
-              href="#about"
-              onClick={(e) => handleSmoothScroll(e, "#about")}
+              href="#projects"
+              onClick={(e) => handleSmoothScroll(e, "#projects")}
               className="text-white text-2xl font-medium tracking-tight hover:opacity-80 transition-opacity"
               style={{ letterSpacing: "-0.80px" }}
             >
-              About
+              Projects
             </Link>
             <Link
               href="https://calendly.com/xharish52/30min"
