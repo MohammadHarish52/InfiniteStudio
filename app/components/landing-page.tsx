@@ -25,14 +25,59 @@ export default function Component() {
   };
   return (
     <div className="min-h-screen bg-black relative overflow-hidden flex items-center">
-      {/* Gradient Background - Dark Green with Black Top */}
-      <div
-        className="absolute inset-0 w-full h-full"
-        style={{
-          background:
-            "linear-gradient(to bottom, #0B0F0E 0%, #0D1816 60%, #0F2420 100%)",
-        }}
-      />
+      {/* Gradient Background with Angled Reflection Effect */}
+      <div className="absolute inset-0 w-full h-full">
+        {/* Upper section - 45deg gradient (left to right) above horizon */}
+        <div
+          className="absolute inset-0 w-full"
+          style={{
+            height: "75%",
+            top: "0",
+            background:
+              "linear-gradient(425deg, #000000 0%, #0B0F0E 30%, #0D1816 50%, #0D9488 80%, #14B8A6 90%, #6fffe9 100%)",
+          }}
+        />
+
+        {/* Lower section - 60deg gradient (creates reflection) below horizon */}
+        <div
+          className="absolute inset-0 w-full"
+          style={{
+            height: "25%",
+            bottom: "0",
+            top: "75%",
+            background:
+              "linear-gradient(-60deg, #6fffe9 0%, #14B8A6 10%, #0D9488 20%, #0D1816 40%, #0B0F0E 60%, #000000 100%)",
+          }}
+        />
+
+        {/* Sharp bright horizon line */}
+        <div
+          className="absolute w-full"
+          style={{
+            top: "75%",
+            transform: "translateY(-50%)",
+            height: "1px",
+            background:
+              "linear-gradient(to right, rgba(111, 255, 233, 0), rgba(20, 184, 166, 0.2), rgba(111, 255, 233, 1))",
+          }}
+        />
+
+        {/* Glow at right end */}
+        <div
+          className="absolute"
+          style={{
+            top: "75%",
+            right: "0",
+            transform: "translateY(-50%)",
+            width: "150px",
+            height: "1px",
+            background: "rgba(111, 255, 233, 1)",
+            boxShadow:
+              "0 0 30px rgba(111, 255, 233, 1), 0 0 60px rgba(111, 255, 233, 0.8), 0 0 100px rgba(20, 184, 166, 0.6), 0 0 150px rgba(20, 184, 166, 0.4), 0 0 200px rgba(13, 148, 136, 0.3)",
+            filter: "blur(8px)",
+          }}
+        />
+      </div>
 
       {/* Hero Section */}
       <section className="relative z-10 px-6 md:px-12 lg:px-20 py-20 w-full">
