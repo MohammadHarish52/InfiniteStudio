@@ -8,19 +8,32 @@ export default function ServicesSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="w-full bg-black py-32 relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-40">
+    <section id="services" className="w-full bg-black py-32 relative overflow-hidden">
+      {/* Gradient Background - Light Top with Dark Bottom (Upper) */}
+      <div
+        className="absolute inset-0 w-full h-full"
+        style={{
+          background: "linear-gradient(to bottom, #0F2420 0%, #0D1816 60%, #0B0F0E 100%)",
+        }}
+      />
+      <div className="container mx-auto px-4 md:px-40 relative z-10">
         {/* Section Header */}
         <div className="mb-4">
-          <span className="text-[#5bc0be] text-sm md:text-base">Services</span>
+          <span className="text-[#14B8A6] text-sm md:text-base">Services</span>
         </div>
-        <h2 className="text-4xl md:text-7xl sm:text-6xl font-bold tracking-wider mb-16 uppercase relative">
-          <span className="bg-gradient-to-b from-white via-zinc-300 to-zinc-500 text-transparent bg-clip-text transform transition-transform duration-300 inline-block">
-            ALL-IN-ONE SOLUTION
-          </span>
-          <span className="absolute -z-10 left-0.5 top-0.5 text-zinc-800 w-full h-full">
-            ALL-IN-ONE SOLUTION
-          </span>
+        <h2
+          className="font-medium text-center text-4xl sm:text-5xl md:text-6xl lg:text-[64px] mb-16"
+          style={{
+            lineHeight: "100%",
+            letterSpacing: "-4%",
+            background:
+              "linear-gradient(88.56deg, rgba(255,255,255,1) 60.44%, rgba(255,255,255,0.5) 92.1%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
+        >
+          All-In-One Solution
         </h2>
 
         {/* Services Grid */}
@@ -32,12 +45,17 @@ export default function ServicesSection() {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="p-8 rounded-2xl bg-[#0A0A0A] border border-zinc-800 hover:border-zinc-700 transition-colors duration-300 h-full">
+              <div 
+                className="p-8 rounded-2xl bg-[#0A0A0A] border border-zinc-700/40 hover:border-zinc-600/60 transition-all duration-300 h-full group-hover:shadow-[0_8px_12px_-2px_rgba(0,0,0,0.4),0_4px_6px_-1px_rgba(0,0,0,0.3),inset_0_1px_0_0_rgba(255,255,255,0.05)]"
+                style={{
+                  boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.05)",
+                }}
+              >
                 <div className="flex flex-col h-full">
                   {/* Icon */}
                   <div className="mb-6">
                     <div className="w-12 h-12 rounded-full bg-zinc-900 flex items-center justify-center">
-                      <service.icon className="w-6 h-6 text-[#5bc0be]" />
+                      <service.icon className="w-6 h-6 text-[#14B8A6]" />
                     </div>
                   </div>
 

@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "./components/Navbar";
 import { Analytics } from "@vercel/analytics/react";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  weight: ["300", "400", "500", "600", "700"],
+const neutralSans = localFont({
+  src: [
+    {
+      path: "./fonts/NeutralSansVF.woff2",
+      weight: "100 900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-neutral-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "InfiniteStudio",
+  title: "Infinite Studio",
   description:
-    "InfiniteStudio is a digital studio that builds digital products that make an impact.",
+    "Infinite Studio is a creative agency balancing raw vision with refined execution.",
   icons: {
     icon: [
       {
@@ -39,9 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Analytics />
-      <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
-      >
+      <body className={`${neutralSans.variable} font-sans antialiased`}>
         <Navbar />
         {children}
       </body>

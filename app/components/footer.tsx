@@ -5,7 +5,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-black py-16 md:py-24 relative overflow-hidden min-h-[300px]">
+    <footer id="contact" className="w-full bg-black py-16 md:py-24 relative overflow-hidden min-h-[300px]">
       {/* Bottom Gradient Wave */}
       <div
         className="absolute inset-0 w-full h-full after:absolute after:inset-0 after:bg-black after:blur-3xl after:-bottom-1/2"

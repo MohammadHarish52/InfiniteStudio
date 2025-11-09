@@ -11,11 +11,22 @@ const Book = () => {
       <div className="container mx-auto px-4 md:px-40 py-32">
         {/* Header */}
         <div className="mb-4">
-          <span className="text-[#5bc0be] text-sm md:text-base">Schedule</span>
+          <span className="text-[#14B8A6] text-sm md:text-base">Schedule</span>
         </div>
         <div className="mb-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-white mb-6">
-            Book a meeting
+          <h1
+            className="font-medium text-center text-4xl sm:text-5xl md:text-6xl lg:text-[64px] mb-6"
+            style={{
+              lineHeight: "100%",
+              letterSpacing: "-4%",
+              background:
+                "linear-gradient(88.56deg, rgba(255,255,255,1) 60.44%, rgba(255,255,255,0.5) 92.1%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            Book a Meeting
           </h1>
           <p className="text-lg text-zinc-400 max-w-2xl">
             Schedule a time to discuss your project and explore how we can help.
