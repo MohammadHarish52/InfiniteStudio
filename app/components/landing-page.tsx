@@ -1,6 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import {
+  SiFigma,
+  SiFramer,
+  SiNextdotjs,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+  SiVercel,
+} from "react-icons/si";
 import ArrowUpRightWhiteIcon from "./icons/ArrowUpRightWhiteIcon";
 
 export default function Component() {
@@ -31,52 +40,15 @@ export default function Component() {
         <div
           className="absolute inset-0 w-full"
           style={{
-            height: "75%",
+            height: "100%",
             top: "0",
+            // Subtle monochrome sweep
             background:
-              "linear-gradient(425deg, #000000 0%, #0B0F0E 30%, #0D1816 50%, #0D9488 80%, #14B8A6 90%, #6fffe9 100%)",
+              "linear-gradient(425deg, #000000 0%, #0A0A0A 35%, #111111 65%, #1A1A1A 100%)",
           }}
         />
 
-        {/* Lower section - 60deg gradient (creates reflection) below horizon */}
-        <div
-          className="absolute inset-0 w-full"
-          style={{
-            height: "25%",
-            bottom: "0",
-            top: "75%",
-            background:
-              "linear-gradient(-60deg, #6fffe9 0%, #14B8A6 10%, #0D9488 20%, #0D1816 40%, #0B0F0E 60%, #000000 100%)",
-          }}
-        />
-
-        {/* Sharp bright horizon line */}
-        <div
-          className="absolute w-full"
-          style={{
-            top: "75%",
-            transform: "translateY(-50%)",
-            height: "1px",
-            background:
-              "linear-gradient(to right, rgba(111, 255, 233, 0), rgba(20, 184, 166, 0.2), rgba(111, 255, 233, 1))",
-          }}
-        />
-
-        {/* Glow at right end */}
-        <div
-          className="absolute"
-          style={{
-            top: "75%",
-            right: "0",
-            transform: "translateY(-50%)",
-            width: "150px",
-            height: "1px",
-            background: "rgba(111, 255, 233, 1)",
-            boxShadow:
-              "0 0 30px rgba(111, 255, 233, 1), 0 0 60px rgba(111, 255, 233, 0.8), 0 0 100px rgba(20, 184, 166, 0.6), 0 0 150px rgba(20, 184, 166, 0.4), 0 0 200px rgba(13, 148, 136, 0.3)",
-            filter: "blur(8px)",
-          }}
-        />
+        {/* Horizon line and end glow removed */}
       </div>
 
       {/* Hero Section */}
@@ -170,6 +142,55 @@ export default function Component() {
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#14B8A6] via-[#0D9488] to-[#14B8A6] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
+            </div>
+
+            {/* Tech stack icons pinned to bottom */}
+            <div className="absolute bottom-6 left-0 right-0 flex items-center justify-center gap-5 sm:gap-6 opacity-90">
+              <span className="text-[11px] sm:text-xs uppercase tracking-wider text-zinc-500">
+                Built with
+              </span>
+              <SiTypescript
+                className="text-zinc-400 hover:text-white transition-colors"
+                title="TypeScript"
+                size={22}
+                aria-label="TypeScript"
+              />
+              <SiNextdotjs
+                className="text-zinc-400 hover:text-white transition-colors"
+                title="Next.js"
+                size={22}
+                aria-label="Next.js"
+              />
+              <SiReact
+                className="text-zinc-400 hover:text-white transition-colors"
+                title="React"
+                size={22}
+                aria-label="React"
+              />
+              <SiTailwindcss
+                className="text-zinc-400 hover:text-white transition-colors"
+                title="Tailwind CSS"
+                size={22}
+                aria-label="Tailwind CSS"
+              />
+              <SiFramer
+                className="text-zinc-400 hover:text-white transition-colors"
+                title="Framer Motion"
+                size={22}
+                aria-label="Framer Motion"
+              />
+              <SiFigma
+                className="text-zinc-400 hover:text-white transition-colors"
+                title="Figma"
+                size={22}
+                aria-label="Figma"
+              />
+              <SiVercel
+                className="text-zinc-400 hover:text-white transition-colors"
+                title="Vercel"
+                size={22}
+                aria-label="Vercel"
+              />
             </div>
           </div>
         </div>

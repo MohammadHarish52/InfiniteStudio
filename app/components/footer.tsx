@@ -9,22 +9,19 @@ export default function Footer() {
       id="contact"
       className="w-full bg-black py-16 md:py-24 relative overflow-hidden min-h-[300px]"
     >
-      {/* Bottom Gradient Wave */}
+      {/* Bottom Gradient Wave (monochrome) */}
       <div
         className="absolute inset-0 w-full h-full after:absolute after:inset-0 after:bg-black after:blur-3xl after:-bottom-1/2"
         style={{
           transform: "scale(1.5)",
           backgroundImage: `
             linear-gradient(
-              to left,
-              #0b132b,   /* Deep dark blue */
-              #1c2541,   /* Darker blue */
-              #3a506b,   /* Slightly lighter blue */
-              #5bc0be,   /* Cyan for stars/nebulas */
-              #6fffe9,   /* Bright cyan for highlights */
-              #3a506b,   /* Transition back to darker blue */
-              #1c2541,   /* Darker blue */
-              #0b132b    /* Deep dark blue */
+              to right,
+              #0A0A0A,
+              #111111,
+              #1A1A1A,
+              #111111,
+              #0A0A0A
             )
           `,
           backgroundSize: "200% 100%",
@@ -48,7 +45,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-0">
           {/* Logo Section */}
           <div className="flex flex-col gap-4">
-            <Infinity className="w-8 h-8 text-[#5bc0be]" />
+            <Infinity className="w-8 h-8 text-zinc-400" />
             <div className="relative">
               <h2 className="text-2xl font-bold tracking-wider uppercase relative">
                 <span className="bg-gradient-to-b from-white via-zinc-300 to-zinc-500 text-transparent bg-clip-text transform transition-transform duration-300 inline-block">

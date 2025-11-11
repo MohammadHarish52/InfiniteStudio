@@ -13,7 +13,8 @@ export default function TeamSection() {
       <div
         className="absolute inset-0 w-full h-full"
         style={{
-          background: "linear-gradient(to bottom, #0B0F0E 0%, #0D1816 60%, #0F2420 100%)",
+          background:
+            "linear-gradient(to bottom, #0A0A0A 0%, #0D0D0D 60%, #000000 100%)",
         }}
       />
       <div className="container mx-auto px-6 md:px-8 lg:px-40 relative z-10">
@@ -37,7 +38,7 @@ export default function TeamSection() {
         </h2>
 
         {/* Team Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto">
           {team.map((member, index) => (
             <div
               key={member.name}

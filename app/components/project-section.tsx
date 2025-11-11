@@ -14,7 +14,8 @@ export default function ProjectsSection() {
       <div
         className="absolute inset-0 w-full h-full"
         style={{
-          background: "linear-gradient(to bottom, #0F2420 0%, #0D1816 60%, #0B0F0E 100%)",
+          background:
+            "linear-gradient(to bottom, #0A0A0A 0%, #0D0D0D 60%, #000000 100%)",
         }}
       />
       <div className="container mx-auto px-4 md:px-40 relative z-10">
