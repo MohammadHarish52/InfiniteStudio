@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowUpRight, Check } from "lucide-react";
 import { pricingPlans } from "@/app/constants/data";
+import { Check } from "lucide-react";
+import { useState } from "react";
 import ArrowUpRightWhiteIcon from "./icons/ArrowUpRightWhiteIcon";
 
 export default function PricingSection() {

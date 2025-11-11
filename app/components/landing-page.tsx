@@ -69,58 +69,22 @@ export default function Component() {
                   backgroundClip: "text",
                 }}
               >
-                Precision, Framed in Possibility.
+                Full-Stack MVPs, Delivered Fast.
               </h1>
               <p
                 className="text-white text-xs md:text-base font-normal tracking-tight opacity-70 text-center"
                 style={{ letterSpacing: "-0.12px" }}
               >
-                A creative agency balancing raw vision with refined execution.
+                We build web applications from concept to launch. Full-stack
+                development, MVP-first approach.
               </p>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-4 w-full px-4 sm:px-0">
-              {/* Book a Call Button with Dark Background */}
+              {/* Book a Call Button - Primary */}
               <Link
                 href="https://calendly.com/xharish52/30min"
-                className="flex items-center justify-center rounded-full border-[1.5px] border-zinc-700/50 hover:border-zinc-600/70 hover:opacity-90 transition-all duration-300 relative overflow-hidden group w-full sm:w-auto min-w-[160px] sm:min-w-[205px]"
-                style={{
-                  height: "48px",
-                  gap: "16px",
-                  paddingTop: "5px",
-                  paddingRight: "20px",
-                  paddingBottom: "5px",
-                  paddingLeft: "24px",
-                  background:
-                    "linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)",
-                  color: "#FFFFFF",
-                  fontWeight: 500,
-                  lineHeight: "100%",
-                  letterSpacing: "-4%",
-                }}
-              >
-                <span className="relative z-10 text-base sm:text-lg md:text-[20px]">
-                  Book a Call
-                </span>
-                <div
-                  className="w-5 h-5 sm:w-[22px] sm:h-[22px] rounded-full flex items-center justify-center flex-shrink-0 relative z-10"
-                  style={{
-                    backgroundColor: "rgba(20, 184, 166, 0.2)",
-                  }}
-                >
-                  <ArrowUpRightWhiteIcon
-                    className="w-3 h-3 sm:w-[14px] sm:h-[14px]"
-                    color="#14B8A6"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#0a0a0a] to-[#1a1a1a] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Link>
-
-              {/* Services Button */}
-              <Link
-                href="#services"
-                onClick={(e) => handleSmoothScroll(e, "#services")}
                 className="flex items-center justify-center rounded-full border-[1.5px] border-transparent hover:opacity-90 transition-all duration-300 relative overflow-hidden group w-full sm:w-auto min-w-[160px] sm:min-w-[205px]"
                 style={{
                   height: "48px",
@@ -138,9 +102,46 @@ export default function Component() {
                 }}
               >
                 <span className="relative z-10 text-base sm:text-lg md:text-[20px]">
+                  Book a Call
+                </span>
+                <div
+                  className="w-5 h-5 sm:w-[22px] sm:h-[22px] rounded-full flex items-center justify-center flex-shrink-0 relative z-10"
+                  style={{
+                    backgroundColor: "rgba(255, 255, 255, 0.2)",
+                  }}
+                >
+                  <ArrowUpRightWhiteIcon
+                    className="w-3 h-3 sm:w-[14px] sm:h-[14px]"
+                    color="#FFFFFF"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#14B8A6] via-[#0D9488] to-[#14B8A6] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+
+              {/* Services Button - Secondary */}
+              <Link
+                href="#services"
+                onClick={(e) => handleSmoothScroll(e, "#services")}
+                className="flex items-center justify-center rounded-full border-[1.5px] border-zinc-700/50 hover:border-zinc-600/70 hover:opacity-90 transition-all duration-300 relative overflow-hidden group w-full sm:w-auto min-w-[160px] sm:min-w-[205px]"
+                style={{
+                  height: "48px",
+                  gap: "16px",
+                  paddingTop: "5px",
+                  paddingRight: "20px",
+                  paddingBottom: "5px",
+                  paddingLeft: "24px",
+                  background:
+                    "linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)",
+                  color: "#FFFFFF",
+                  fontWeight: 500,
+                  lineHeight: "100%",
+                  letterSpacing: "-4%",
+                }}
+              >
+                <span className="relative z-10 text-base sm:text-lg md:text-[20px]">
                   Services
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#14B8A6] via-[#0D9488] to-[#14B8A6] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#0a0a0a] to-[#1a1a1a] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </div>
 
