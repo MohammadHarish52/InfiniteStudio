@@ -47,13 +47,11 @@ export default function Component() {
               "linear-gradient(425deg, #000000 0%, #0A0A0A 35%, #111111 65%, #1A1A1A 100%)",
           }}
         />
-
-        {/* Horizon line and end glow removed */}
       </div>
 
       {/* Hero Section */}
-      <section className="relative z-10 px-6 md:px-12 lg:px-20 py-20 w-full">
-        <div className="max-w-[1200px] mx-auto">
+      <section className="flex flex-col items-center justify-center z-10 px-6 md:px-12 lg:px-20 py-20 w-full">
+        <div className="max-w-[1200px] mx-auto flex flex-col items-center justify-center">
           <div className="flex flex-col items-center gap-8 text-center">
             {/* Main Heading */}
             <div className="flex flex-col gap-6">
@@ -146,50 +144,43 @@ export default function Component() {
             </div>
 
             {/* Tech stack icons pinned to bottom */}
-            <div className="absolute bottom-6 left-0 right-0 flex items-center justify-center gap-5 sm:gap-6 opacity-90">
-              <span className="text-[11px] sm:text-xs uppercase tracking-wider text-zinc-500">
+            <div className="absolute bottom-12 md:bottom-16 left-0 right-0 flex items-center justify-center gap-5 sm:gap-6 opacity-90">
+              <span className="hidden sm:inline text-[11px] sm:text-xs uppercase tracking-wider text-zinc-500">
                 Built with
               </span>
               <SiTypescript
-                className="text-zinc-400 hover:text-white transition-colors"
+                className="text-zinc-400 hover:text-white transition-colors w-[22px] h-[22px] md:w-[28px] md:h-[28px] lg:w-[32px] lg:h-[32px]"
                 title="TypeScript"
-                size={22}
                 aria-label="TypeScript"
               />
               <SiNextdotjs
-                className="text-zinc-400 hover:text-white transition-colors"
+                className="text-zinc-400 hover:text-white transition-colors w-[22px] h-[22px] md:w-[28px] md:h-[28px] lg:w-[32px] lg:h-[32px]"
                 title="Next.js"
-                size={22}
                 aria-label="Next.js"
               />
               <SiReact
-                className="text-zinc-400 hover:text-white transition-colors"
+                className="text-zinc-400 hover:text-white transition-colors w-[22px] h-[22px] md:w-[28px] md:h-[28px] lg:w-[32px] lg:h-[32px]"
                 title="React"
-                size={22}
                 aria-label="React"
               />
               <SiTailwindcss
-                className="text-zinc-400 hover:text-white transition-colors"
+                className="text-zinc-400 hover:text-white transition-colors w-[22px] h-[22px] md:w-[28px] md:h-[28px] lg:w-[32px] lg:h-[32px]"
                 title="Tailwind CSS"
-                size={22}
                 aria-label="Tailwind CSS"
               />
               <SiFramer
-                className="text-zinc-400 hover:text-white transition-colors"
+                className="text-zinc-400 hover:text-white transition-colors w-[22px] h-[22px] md:w-[28px] md:h-[28px] lg:w-[32px] lg:h-[32px]"
                 title="Framer Motion"
-                size={22}
                 aria-label="Framer Motion"
               />
               <SiFigma
-                className="text-zinc-400 hover:text-white transition-colors"
+                className="text-zinc-400 hover:text-white transition-colors w-[22px] h-[22px] md:w-[28px] md:h-[28px] lg:w-[32px] lg:h-[32px]"
                 title="Figma"
-                size={22}
                 aria-label="Figma"
               />
               <SiVercel
-                className="text-zinc-400 hover:text-white transition-colors"
+                className="text-zinc-400 hover:text-white transition-colors w-[22px] h-[22px] md:w-[28px] md:h-[28px] lg:w-[32px] lg:h-[32px]"
                 title="Vercel"
-                size={22}
                 aria-label="Vercel"
               />
             </div>
