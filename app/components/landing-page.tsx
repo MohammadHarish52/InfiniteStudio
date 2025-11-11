@@ -60,7 +60,7 @@ export default function Component() {
               <h1
                 className="font-medium text-center text-4xl sm:text-5xl md:text-6xl lg:text-[64px]"
                 style={{
-                  lineHeight: "115%",
+                  lineHeight: "120%",
                   letterSpacing: "-4%",
                   background:
                     "linear-gradient(88.56deg, rgba(255,255,255,1) 60.44%, rgba(255,255,255,0.5) 92.1%)",

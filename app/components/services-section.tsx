@@ -8,7 +8,10 @@ export default function ServicesSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="services" className="w-full bg-black py-32 relative overflow-hidden min-h-screen flex items-center">
+    <section
+      id="services"
+      className="w-full bg-black py-32 relative overflow-hidden min-h-screen flex items-center"
+    >
       {/* Gradient Background - Light Top with Dark Bottom (Upper) */}
       <div
         className="absolute inset-0 w-full h-full"
@@ -25,7 +28,7 @@ export default function ServicesSection() {
         <h2
           className="font-medium text-center text-4xl sm:text-5xl md:text-6xl lg:text-[64px] mb-16"
           style={{
-            lineHeight: "115%",
+            lineHeight: "120%",
             letterSpacing: "-4%",
             background:
               "linear-gradient(88.56deg, rgba(255,255,255,1) 60.44%, rgba(255,255,255,0.5) 92.1%)",
@@ -46,10 +49,11 @@ export default function ServicesSection() {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div 
+              <div
                 className="p-8 rounded-2xl bg-[#0A0A0A] border border-zinc-700/40 hover:border-zinc-600/60 transition-all duration-300 h-full group-hover:shadow-[0_8px_12px_-2px_rgba(0,0,0,0.4),0_4px_6px_-1px_rgba(0,0,0,0.3),inset_0_1px_0_0_rgba(255,255,255,0.05)]"
                 style={{
-                  boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.05)",
+                  boxShadow:
+                    "0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.05)",
                 }}
               >
                 <div className="flex flex-col h-full">

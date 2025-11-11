@@ -26,7 +26,7 @@ export default function PricingSection() {
         <h2
           className="font-medium text-center text-4xl sm:text-5xl md:text-6xl lg:text-[64px] mb-16"
           style={{
-            lineHeight: "115%",
+            lineHeight: "120%",
             letterSpacing: "-4%",
             background:
               "linear-gradient(88.56deg, rgba(255,255,255,1) 60.44%, rgba(255,255,255,0.5) 92.1%)",
@@ -95,7 +95,7 @@ export default function PricingSection() {
                     : "bg-[#0A0A0A] border border-zinc-700/40 hover:border-zinc-600/60"
                 }`}
                 style={{
-                  boxShadow: plan.popular 
+                  boxShadow: plan.popular
                     ? "0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.05), 0 0 0 1px rgba(20, 184, 166, 0.1)"
                     : "0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.05)",
                 }}
@@ -184,7 +184,8 @@ export default function PricingSection() {
                       style={
                         plan.popular
                           ? {
-                              background: "linear-gradient(135deg, #14B8A6 0%, #0D9488 100%)",
+                              background:
+                                "linear-gradient(135deg, #14B8A6 0%, #0D9488 100%)",
                             }
                           : {}
                       }
@@ -212,8 +213,7 @@ export default function PricingSection() {
               paddingRight: "20px",
               paddingBottom: "5px",
               paddingLeft: "24px",
-              background:
-                "linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)",
+              background: "linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)",
               color: "#FFFFFF",
               fontWeight: 500,
               lineHeight: "100%",
