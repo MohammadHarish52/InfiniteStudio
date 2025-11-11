@@ -54,13 +54,13 @@ export default function Component() {
       {/* Hero Section */}
       <section className="relative z-10 px-6 md:px-12 lg:px-20 py-20 w-full">
         <div className="max-w-[1200px] mx-auto">
-          <div className="flex flex-col items-center gap-12 text-center">
+          <div className="flex flex-col items-center gap-8 text-center">
             {/* Main Heading */}
             <div className="flex flex-col gap-6">
               <h1
                 className="font-medium text-center text-4xl sm:text-5xl md:text-6xl lg:text-[64px]"
                 style={{
-                  lineHeight: "100%",
+                  lineHeight: "115%",
                   letterSpacing: "-4%",
                   background:
                     "linear-gradient(88.56deg, rgba(255,255,255,1) 60.44%, rgba(255,255,255,0.5) 92.1%)",

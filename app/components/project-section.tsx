@@ -9,7 +9,7 @@ export default function ProjectsSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="projects" className="w-full bg-black py-32 relative overflow-hidden">
+    <section id="projects" className="w-full bg-black py-32 relative overflow-hidden min-h-screen flex items-center">
       {/* Gradient Background - Light Top with Dark Bottom (Upper) */}
       <div
         className="absolute inset-0 w-full h-full"
@@ -25,7 +25,7 @@ export default function ProjectsSection() {
         <h2
           className="font-medium text-center text-4xl sm:text-5xl md:text-6xl lg:text-[64px] mb-16"
           style={{
-            lineHeight: "100%",
+            lineHeight: "115%",
             letterSpacing: "-4%",
             background:
               "linear-gradient(88.56deg, rgba(255,255,255,1) 60.44%, rgba(255,255,255,0.5) 92.1%)",
